@@ -11,7 +11,7 @@
   <meta property="og:description" content="Premium cybersecurity engineer portfolio — network security, ethical hacking, FortiGate, MikroTik." />
   <meta property="og:url" content="https://www.onspace.ai" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="HornOudom" />
+  <meta property="og:site_name" content="OnSpace.AI" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630/0a0f1e/00d4ff?text=Horn+Oudom+%7C+Cybersecurity" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -82,13 +82,13 @@
         </div>
         <div class="flex-gap" style="gap:12px;">
           <div class="lang-switcher" id="lang-switcher">
-            <button class="lang-btn active" id="btn-lang-en" title="English">🇺🇸 EN</button>
-            <button class="lang-btn" id="btn-lang-km" title="ភាសាខ្មែរ">🇰🇭 KH</button>
+            <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" title="English">🇺🇸 EN</button>
+            <button class="lang-btn" id="btn-lang-km" onclick="setLanguage('km')" title="ភាសាខ្មែរ">🇰🇭 KH</button>
           </div>
-          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Switch to Light Mode" aria-label="Switch to Light Mode">
+          <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Switch to Light Mode" aria-label="Switch to Light Mode">
             <i class="fas fa-sun" id="theme-icon"></i>
           </button>
-          <a href="#admin" id="nav-admin-btn" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#64748b;text-decoration:none;border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:6px;transition:all 0.3s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='rgba(0,212,255,0.3)'" onmouseout="this.style.color='#64748b';this.style.borderColor='rgba(255,255,255,0.08)'">
+          <a href="#admin" id="nav-admin-btn" onclick="showAdmin(event)" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#64748b;text-decoration:none;border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:6px;transition:all 0.3s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='rgba(0,212,255,0.3)'" onmouseout="this.style.color='#64748b';this.style.borderColor='rgba(255,255,255,0.08)'">
             <i class="fas fa-shield-halved" style="margin-right:6px;"></i><span data-i18n="nav.admin">ADMIN</span>
           </a>
           <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
@@ -99,12 +99,12 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
-      <a href="#hero" class="nav-link" data-i18n="nav.home">Home</a>
-      <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-      <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
-      <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
-      <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
-      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <a href="#hero" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
+      <a href="#skills" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.experience">Experience</a>
+      <a href="#projects" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a>
     </div>
 
     <section id="hero">
@@ -135,7 +135,7 @@
             </a>
             <a id="hero-download-cv-btn" href="#" download class="btn-primary hidden" style="text-decoration:none;background:linear-gradient(135deg,var(--green),var(--blue));">
               <span><i class="fas fa-download" style="margin-right:8px;"></i><span data-i18n="hero.btn.download.cv">Download CV</span></span>
-            </a>
+            </button>
           </div>
           <div class="glass mt-8" style="padding:16px 20px;max-width:420px;background:rgba(0,0,0,0.5);">
             <div class="flex-gap mb-2" style="gap:6px;">
@@ -242,11 +242,11 @@
           <div class="section-divider" style="margin:12px auto 0;"></div>
         </div>
         <div class="flex-center mb-8" style="flex-wrap:wrap;gap:10px;" id="skill-filter" role="group" aria-label="Skill category filter">
-          <button class="cat-btn active" data-cat="all" data-i18n="skills.filter.all">All</button>
-          <button class="cat-btn" data-cat="Cybersecurity" data-i18n="skills.filter.cyber">Cybersecurity</button>
-          <button class="cat-btn" data-cat="Networking" data-i18n="skills.filter.network">Networking</button>
-          <button class="cat-btn" data-cat="Web Development" data-i18n="skills.filter.web">Web Dev</button>
-          <button class="cat-btn" data-cat="System Administration" data-i18n="skills.filter.sysadmin">SysAdmin</button>
+          <button class="cat-btn active" onclick="filterSkills(this,'all')" data-i18n="skills.filter.all">All</button>
+          <button class="cat-btn" onclick="filterSkills(this,'Cybersecurity')" data-i18n="skills.filter.cyber">Cybersecurity</button>
+          <button class="cat-btn" onclick="filterSkills(this,'Networking')" data-i18n="skills.filter.network">Networking</button>
+          <button class="cat-btn" onclick="filterSkills(this,'Web Development')" data-i18n="skills.filter.web">Web Dev</button>
+          <button class="cat-btn" onclick="filterSkills(this,'System Administration')" data-i18n="skills.filter.sysadmin">SysAdmin</button>
         </div>
         <div id="skills-grid" class="grid-3">
           <div class="skill-card skeleton" style="height:90px;"></div>
@@ -284,10 +284,10 @@
           <div class="section-divider" style="margin:12px auto 0;"></div>
         </div>
         <div class="flex-center mb-8" style="flex-wrap:wrap;gap:10px;" id="project-filter">
-          <button class="cat-btn active" data-i18n="projects.filter.all">All</button>
-          <button class="cat-btn" data-i18n="projects.filter.security">Security</button>
-          <button class="cat-btn" data-i18n="projects.filter.web">Web</button>
-          <button class="cat-btn" data-i18n="projects.filter.network">Networking</button>
+          <button class="cat-btn active" onclick="filterProjects(this,'all')" data-i18n="projects.filter.all">All</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Security')" data-i18n="projects.filter.security">Security</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Web')" data-i18n="projects.filter.web">Web</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Networking')" data-i18n="projects.filter.network">Networking</button>
         </div>
         <div class="grid-3" id="projects-grid">
           <div class="project-card skeleton" style="height:300px;"></div>
@@ -313,7 +313,7 @@
               <h3 class="font-orbit" style="font-size:18px;margin-bottom:24px;color:#fff;">
                 <i class="fas fa-paper-plane" style="color:var(--cyan);margin-right:10px;"></i><span data-i18n="contact.form.title">Send a Message</span>
               </h3>
-              <form id="contact-form">
+              <form id="contact-form" onsubmit="handleContactSubmit(event)">
                 <div class="mb-4">
                   <label class="form-label" data-i18n="contact.form.name">Name</label>
                   <input type="text" name="name" class="contact-input" data-i18n-ph="contact.form.name.ph" placeholder="Your name" required />
@@ -411,7 +411,7 @@
         <div id="login-error" class="hidden" style="background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.3);color:var(--pink);padding:12px;border-radius:8px;font-size:13px;margin-bottom:16px;text-align:center;"></div>
         
         <div id="login-view">
-          <form id="login-form">
+          <form id="login-form" onsubmit="handleAdminLogin(event)">
             <div class="mb-4">
               <label class="form-label" data-i18n="admin.email">Email</label>
               <input type="email" id="login-email" class="login-input" placeholder="admin@email.com" required autocomplete="username" />
@@ -419,7 +419,7 @@
             <div class="mb-6" style="position:relative;">
               <label class="form-label" data-i18n="admin.password">Password</label>
               <input type="password" id="login-password" class="login-input" placeholder="••••••••••" required autocomplete="current-password" />
-              <i class="fas fa-eye" id="pwd-toggle" style="position:absolute;right:14px;top:36px;color:#475569;cursor:pointer;font-size:14px;"></i>
+              <i class="fas fa-eye" id="pwd-toggle" style="position:absolute;right:14px;top:36px;color:#475569;cursor:pointer;font-size:14px;" onclick="togglePasswordVisibility()"></i>
             </div>
             <button type="submit" class="btn-primary" style="width:100%;" id="login-btn">
               <span><i class="fas fa-right-to-bracket" style="margin-right:8px;"></i><span data-i18n="admin.login.btn">ACCESS DASHBOARD</span></span>
@@ -432,7 +432,7 @@
         
         <div id="forgot-view" class="hidden">
           <p class="text-muted text-sm mb-4" style="text-align:center;">Enter your email to receive a reset OTP.</p>
-          <form id="forgot-form">
+          <form id="forgot-form" onsubmit="handleForgotPassword(event)">
             <div class="mb-4">
               <label class="form-label">Email</label>
               <input type="email" id="forgot-email" class="login-input" placeholder="admin@email.com" required />
@@ -448,7 +448,7 @@
         
         <div id="otp-view" class="hidden">
           <p class="text-muted text-sm mb-4" style="text-align:center;">Enter the OTP sent to your email and set a new password.</p>
-          <form id="otp-form">
+          <form id="otp-form" onsubmit="handleOtpVerify(event)">
             <div class="mb-4">
               <label class="form-label">OTP Code</label>
               <input type="text" id="otp-code" class="login-input" placeholder="6-digit code" maxlength="6" required />
@@ -567,7 +567,7 @@
             </div>
             <div class="admin-card">
               <h3 class="font-orbit" style="font-size:15px;color:#fff;margin-bottom:20px;">Basic Information</h3>
-              <form id="profile-form">
+              <form id="profile-form" onsubmit="handleProfileSave(event)">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                   <div><label class="form-label">Full Name</label><input type="text" id="profile-name" class="form-input" placeholder="Horn Oudom" required /></div>
                   <div><label class="form-label">Title</label><input type="text" id="profile-title" class="form-input" placeholder="Cybersecurity Enthusiast" required /></div>
@@ -697,7 +697,7 @@
         <h2 class="modal-title" id="project-modal-title">Add Project</h2>
         <button onclick="closeProjectModal()" style="background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
-      <form id="project-form">
+      <form id="project-form" onsubmit="handleProjectSave(event)">
         <input type="hidden" id="project-id" />
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div><label class="form-label">Title *</label><input type="text" id="proj-title" class="form-input" placeholder="Project title" required /></div>
@@ -752,7 +752,7 @@
         <h2 class="modal-title" id="skill-modal-title">Add Skill</h2>
         <button onclick="closeSkillModal()" style="background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
-      <form id="skill-form">
+      <form id="skill-form" onsubmit="handleSkillSave(event)">
         <input type="hidden" id="skill-id" />
         <label class="form-label">Skill Name *</label>
         <input type="text" id="skill-name" class="form-input" placeholder="e.g. FortiGate" required />

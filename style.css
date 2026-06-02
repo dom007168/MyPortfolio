@@ -117,7 +117,7 @@ body { font-family: 'Inter', sans-serif; background: #030712; color: #e2e8f0; ov
 .about-image-frame { position: absolute; inset: -8px; border-radius: 20px; border: 1px solid rgba(0,212,255,0.2); z-index: 1; }
 .about-image-frame::before { content: ''; position: absolute; top: -1px; left: 20px; right: 20px; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
 .about-tag { position: absolute; bottom: -16px; right: -16px; background: linear-gradient(135deg, var(--blue), var(--purple)); border-radius: 10px; padding: 12px 16px; font-size: 12px; font-family: 'Share Tech Mono', monospace; z-index: 3; box-shadow: 0 0 25px rgba(0,102,255,0.4); }
-.stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; backdrop-filter: blur(10px); }
+.stat-card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; }
 .stat-card:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,212,255,0.15); }
 .stat-num { font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 700; }
 
@@ -177,7 +177,7 @@ footer { background: rgba(1,4,9,0.95); border-top: 1px solid var(--border); padd
 .back-top.show { display: flex; }
 .back-top:hover { transform: translateY(-4px); box-shadow: 0 0 30px rgba(0,102,255,0.6); }
 
-/* ADMIN */
+/* ADMIN Panel Styles */
 #admin-section { display: none; min-height: 100vh; background: #030712; }
 #admin-section.active { display: flex; }
 .admin-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #030712; width: 100%; }
@@ -229,10 +229,6 @@ select.form-input option { background: #030712; }
 
 .upload-zone { border: 2px dashed var(--border); border-radius: 10px; padding: 32px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
 .upload-zone:hover, .upload-zone.dragover { border-color: var(--cyan); background: rgba(0,212,255,0.04); }
-#proj-img-upload-zone { cursor: pointer; }
-#proj-img-upload-zone:hover { border-color: rgba(0,212,255,0.5) !important; background: rgba(0,212,255,0.03); }
-#proj-img-upload-zone.dragover { border-color: var(--cyan) !important; background: rgba(0,212,255,0.06); }
-#proj-img-upload-zone:hover #proj-img-overlay { opacity: 1 !important; }
 
 .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-family: 'Share Tech Mono', monospace; font-weight: 500; }
 .badge-cyan { background: rgba(0,212,255,0.12); color: var(--cyan); border: 1px solid rgba(0,212,255,0.25); }
@@ -248,6 +244,7 @@ select.form-input option { background: #030712; }
 #sidebar-toggle-btn { display: none; position: fixed; top: 16px; left: 16px; z-index: 3000; width: 40px; height: 40px; background: rgba(5,15,35,0.95); border: 1px solid var(--border); border-radius: 8px; color: var(--cyan); font-size: 18px; cursor: pointer; align-items: center; justify-content: center; }
 
 .neon-hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent); opacity: 0.3; margin: 0; }
+
 /* KHMER LANGUAGE STYLES */
 body.lang-km { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', 'Inter', sans-serif; }
 body.lang-km p, body.lang-km span, body.lang-km div, body.lang-km li, body.lang-km td { line-height: 1.9; }
@@ -258,6 +255,7 @@ body.lang-km .sidebar-nav-item { font-family: 'Kantumruy Pro', 'Noto Sans Khmer'
 body.lang-km .section-tag { letter-spacing: 0.5px; font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; }
 body.lang-km .hero-name { letter-spacing: -1px; }
 body.lang-km .cat-btn { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; }
+
 .lang-switcher { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; }
 .lang-btn { background: none; border: none; padding: 6px 10px; font-size: 12px; cursor: pointer; font-family: 'Share Tech Mono', monospace; color: #64748b; transition: all 0.3s; white-space: nowrap; }
 .lang-btn.active { background: rgba(0,212,255,0.15); color: var(--cyan); }
@@ -279,7 +277,6 @@ body.lang-km .cat-btn { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-se
 @media (max-width: 900px) { .responsive-2col { grid-template-columns: 1fr !important; gap: 40px !important; } .responsive-3col { grid-template-columns: 1fr 1fr !important; gap: 30px !important; } }
 @media (max-width: 600px) { .responsive-3col { grid-template-columns: 1fr !important; } }
 
-/* THEME TOGGLE BUTTON */
 .theme-toggle-btn { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; flex-shrink: 0; }
 .theme-toggle-btn:hover { background: rgba(0,212,255,0.12); border-color: var(--cyan); color: var(--cyan); }
 
@@ -369,8 +366,6 @@ body.light-mode .form-input:focus { border-color: var(--blue); box-shadow: 0 0 1
 body.light-mode .form-input option { background: #f8fafc; color: #0f172a; }
 body.light-mode .upload-zone { border-color: rgba(0,102,255,0.2); }
 body.light-mode .upload-zone:hover, body.light-mode .upload-zone.dragover { border-color: var(--blue); background: rgba(0,102,255,0.04); }
-body.light-mode #proj-img-upload-zone { border-color: rgba(0,102,255,0.18) !important; }
-body.light-mode #proj-img-upload-zone:hover { border-color: rgba(0,102,255,0.5) !important; background: rgba(0,102,255,0.03); }
 body.light-mode .skeleton { background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%); }
 body.light-mode .page-loader { background: #f0f4f8; }
 body.light-mode .back-top { box-shadow: 0 0 20px rgba(0,102,255,0.25); }
@@ -383,7 +378,6 @@ body.light-mode ::-webkit-scrollbar-track { background: #e2eaf8; }
 body.light-mode ::-webkit-scrollbar-thumb { background: var(--blue); }
 body.light-mode #sidebar-toggle-btn { background: rgba(255,255,255,0.95); border-color: rgba(0,102,255,0.2); color: var(--blue); }
 
-/* Loading overlay */
 .page-loader { position: fixed; inset: 0; background: #030712; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; transition: opacity 0.5s; }
 .page-loader.fade-out { opacity: 0; pointer-events: none; }
 .loader-spinner { width: 40px; height: 40px; border: 3px solid rgba(0,212,255,0.2); border-top-color: var(--cyan); border-radius: 50%; animation: spin 0.8s linear infinite; }
