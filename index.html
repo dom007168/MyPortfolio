@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horn Oudom | Cybersecurity Portfolio</title>
+  <meta name="description" content="Horn Oudom – Cybersecurity Enthusiast, Network Security Learner, and Web Developer specializing in FortiGate, MikroTik, and ethical hacking." />
+  <meta name="keywords" content="Horn Oudom, cybersecurity, network security, FortiGate, MikroTik, penetration testing, web developer" />
+  <meta name="author" content="Horn Oudom" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Horn Oudom | Cybersecurity Portfolio" />
+  <meta property="og:description" content="Premium cybersecurity engineer portfolio — network security, ethical hacking, FortiGate, MikroTik." />
+  <meta property="og:url" content="https://www.onspace.ai" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OnSpace.AI" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/0a0f1e/00d4ff?text=Horn+Oudom+%7C+Cybersecurity" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Horn Oudom | Cybersecurity Portfolio" />
+  <meta name="twitter:description" content="Premium cybersecurity engineer portfolio — network security, ethical hacking, FortiGate, MikroTik." />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/0a0f1e/00d4ff?text=Horn+Oudom+%7C+Cybersecurity" />
+  <meta name="twitter:url" content="https://www.onspace.ai" />
+  <!-- hreflang SEO -->
+  <link rel="alternate" hreflang="en" href="https://www.onspace.ai" />
+  <link rel="alternate" hreflang="km" href="https://www.onspace.ai?lang=km" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Share Tech Mono"', 'monospace'],
+            orbitron: ['Orbitron', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            cyber: {
+              bg: '#030712', darker: '#010409',
+              card: 'rgba(10,20,40,0.7)', border: 'rgba(0,212,255,0.2)',
+              cyan: '#00d4ff', blue: '#0066ff', purple: '#7c3aed',
+              pink: '#f43f5e', green: '#00ff88',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #030712; color: #e2e8f0; overflow-x: hidden; min-height: 100vh; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #010409; }
+    ::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 3px; }
+    ::selection { background: rgba(0,212,255,0.3); color: #fff; }
+
+    :root {
+      --cyan: #00d4ff; --blue: #0066ff; --purple: #7c3aed;
+      --pink: #f43f5e; --green: #00ff88; --dark: #030712;
+      --card-bg: rgba(10,20,40,0.75); --border: rgba(0,212,255,0.18);
+      --border-glow: rgba(0,212,255,0.45); --text-muted: #94a3b8; --radius: 12px;
+    }
+
+    .cyber-grid {
+      position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+      background-size: 50px 50px; pointer-events: none; z-index: 0;
+    }
+
+    .glass { background: var(--card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: var(--radius); }
+    .glass-strong { background: rgba(5,15,35,0.92); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border-glow); border-radius: var(--radius); }
+
+    .glow-cyan { box-shadow: 0 0 20px rgba(0,212,255,0.35), 0 0 60px rgba(0,212,255,0.12); }
+    .glow-blue { box-shadow: 0 0 20px rgba(0,102,255,0.4), 0 0 60px rgba(0,102,255,0.15); }
+    .glow-purple { box-shadow: 0 0 20px rgba(124,58,237,0.4), 0 0 60px rgba(124,58,237,0.15); }
+    .text-glow-cyan { text-shadow: 0 0 20px rgba(0,212,255,0.8), 0 0 40px rgba(0,212,255,0.4); }
+
+    .gradient-text { background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 50%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-2 { background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(0,102,255,0.3); }
+    .btn-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--cyan), var(--blue)); opacity: 0; transition: opacity 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(0,102,255,0.5); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .btn-outline { background: transparent; color: var(--cyan); border: 1px solid var(--cyan); padding: 12px 28px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; }
+    .btn-outline:hover { background: rgba(0,212,255,0.1); box-shadow: 0 0 25px rgba(0,212,255,0.3); transform: translateY(-2px); }
+    .btn-sm { padding: 8px 18px; font-size: 11px; }
+    .btn-danger { background: linear-gradient(135deg, #dc2626, #9f1239); color: #fff; border: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .btn-danger:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(220,38,38,0.4); }
+
+    .section-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--cyan); font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 2px; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; }
+    .section-title { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.2; }
+    .section-divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--blue)); border-radius: 2px; margin: 16px 0 0; }
+
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-18px); } }
+    @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 15px rgba(0,212,255,0.3); } 50% { box-shadow: 0 0 40px rgba(0,212,255,0.7), 0 0 80px rgba(0,212,255,0.3); } }
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes blink { 0%, 100% { border-color: var(--cyan); } 50% { border-color: transparent; } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    @keyframes glitchX { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-3px); } 40% { transform: translateX(3px); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
+    @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeOutRight { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(40px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .anim-fade-up { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.23,1,0.32,1); }
+    .anim-fade-up.visible { opacity: 1; transform: translateY(0); }
+    .anim-fade-left { opacity: 0; transform: translateX(-40px); transition: all 0.7s cubic-bezier(0.23,1,0.32,1); }
+    .anim-fade-left.visible { opacity: 1; transform: translateX(0); }
+    .anim-fade-right { opacity: 0; transform: translateX(40px); transition: all 0.7s cubic-bezier(0.23,1,0.32,1); }
+    .anim-fade-right.visible { opacity: 1; transform: translateX(0); }
+    .delay-100 { transition-delay: 0.1s; } .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; } .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; } .delay-600 { transition-delay: 0.6s; }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: all 0.4s ease; }
+    #navbar.scrolled { background: rgba(3,7,18,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 10px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 900; letter-spacing: 2px; }
+    .nav-link { font-family: 'Share Tech Mono', monospace; font-size: 13px; letter-spacing: 1px; color: #94a3b8; text-decoration: none; padding: 6px 10px; border-radius: 4px; transition: all 0.3s; position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: var(--cyan); transition: width 0.3s; box-shadow: 0 0 8px var(--cyan); }
+    .nav-link:hover, .nav-link.active { color: var(--cyan); }
+    .nav-link:hover::after, .nav-link.active::after { width: 60%; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cyan); border-radius: 1px; transition: all 0.3s; display: block; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; background: rgba(3,7,18,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 20px; z-index: 999; flex-direction: column; gap: 8px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu .nav-link { padding: 12px 16px; border-radius: 8px; }
+    .mobile-menu .nav-link:hover { background: rgba(0,212,255,0.08); }
+    @media (max-width: 768px) { .hamburger { display: flex; } .desktop-nav { display: none !important; } }
+
+    /* HERO */
+    #hero { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+    #particle-canvas { position: absolute; inset: 0; z-index: 1; }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.3); color: var(--cyan); font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 3px; padding: 8px 18px; border-radius: 20px; animation: fadeInUp 0.8s ease forwards; }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 10px var(--cyan); animation: pulseGlow 1.5s ease infinite; }
+    .hero-name { font-family: 'Orbitron', sans-serif; font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1.1; animation: fadeInUp 0.8s ease 0.2s both; }
+    .typing-wrapper { font-family: 'Share Tech Mono', monospace; font-size: clamp(16px, 3vw, 24px); color: var(--cyan); animation: fadeInUp 0.8s ease 0.4s both; }
+    #typed-text { color: var(--cyan); }
+    .cursor { display: inline-block; width: 2px; height: 1.2em; background: var(--cyan); margin-left: 2px; vertical-align: middle; animation: blink 0.8s infinite; }
+    .hero-desc { color: #94a3b8; font-size: 16px; line-height: 1.8; max-width: 560px; animation: fadeInUp 0.8s ease 0.6s both; }
+    .hero-buttons { animation: fadeInUp 0.8s ease 0.8s both; }
+    .hero-floating-icons { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; flex-direction: column; gap: 20px; }
+    .float-icon { width: 52px; height: 52px; background: rgba(10,20,40,0.8); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; animation: float 4s ease-in-out infinite; backdrop-filter: blur(10px); }
+    .float-icon:nth-child(2) { animation-delay: -1s; } .float-icon:nth-child(3) { animation-delay: -2s; }
+    .float-icon:nth-child(4) { animation-delay: -3s; } .float-icon:nth-child(5) { animation-delay: -1.5s; }
+    .scan-line { position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0.15; animation: scan 4s linear infinite; z-index: 2; }
+    .hex-bg { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%); z-index: 1; }
+    .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; animation: float 2.5s ease infinite; }
+    .scroll-indicator .mouse { width: 26px; height: 40px; border: 2px solid rgba(0,212,255,0.5); border-radius: 13px; display: flex; justify-content: center; padding-top: 6px; margin: 0 auto; }
+    .scroll-indicator .wheel { width: 4px; height: 8px; background: var(--cyan); border-radius: 2px; animation: float 1.5s ease infinite; }
+    @media (max-width: 768px) { .hero-floating-icons { display: none; } }
+
+    /* ABOUT */
+    #about { padding: 100px 0; position: relative; z-index: 1; }
+    .about-image { width: 280px; height: 340px; object-fit: cover; border-radius: 16px; position: relative; z-index: 2; border: 2px solid rgba(0,212,255,0.3); }
+    .about-image-frame { position: absolute; inset: -8px; border-radius: 20px; border: 1px solid rgba(0,212,255,0.2); z-index: 1; }
+    .about-image-frame::before { content: ''; position: absolute; top: -1px; left: 20px; right: 20px; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .about-tag { position: absolute; bottom: -16px; right: -16px; background: linear-gradient(135deg, var(--blue), var(--purple)); border-radius: 10px; padding: 12px 16px; font-size: 12px; font-family: 'Share Tech Mono', monospace; z-index: 3; box-shadow: 0 0 25px rgba(0,102,255,0.4); }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; backdrop-filter: blur(10px); }
+    .stat-card:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,212,255,0.15); }
+    .stat-num { font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 700; }
+
+    /* SKILLS */
+    #skills { padding: 100px 0; position: relative; z-index: 1; }
+    .skill-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; backdrop-filter: blur(10px); transition: all 0.4s; position: relative; overflow: hidden; }
+    .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0; transition: opacity 0.3s; }
+    .skill-card:hover { border-color: rgba(0,212,255,0.4); transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,212,255,0.12); }
+    .skill-card:hover::before { opacity: 1; }
+    .skill-bar-bg { height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; border-radius: 3px; width: 0%; transition: width 1.5s cubic-bezier(0.23,1,0.32,1); position: relative; }
+    .skill-bar-fill::after { content: ''; position: absolute; top: 0; right: 0; width: 6px; height: 6px; border-radius: 50%; background: inherit; box-shadow: 0 0 8px currentColor; }
+    .cat-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 8px 20px; border-radius: 20px; font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; }
+    .cat-btn.active, .cat-btn:hover { background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 15px rgba(0,212,255,0.2); }
+
+    /* TIMELINE */
+    #experience { padding: 100px 0; position: relative; z-index: 1; }
+    .timeline { position: relative; padding-left: 40px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--cyan), var(--purple), var(--blue)); box-shadow: 0 0 15px rgba(0,212,255,0.3); }
+    .timeline-item { position: relative; margin-bottom: 40px; }
+    .timeline-dot { position: absolute; left: -47px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--dark); border: 2px solid var(--cyan); box-shadow: 0 0 15px rgba(0,212,255,0.5); z-index: 1; transition: all 0.3s; }
+    .timeline-item:hover .timeline-dot { background: var(--cyan); transform: scale(1.3); }
+    .timeline-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; backdrop-filter: blur(10px); transition: all 0.4s; }
+    .timeline-card:hover { border-color: var(--cyan); box-shadow: 0 8px 30px rgba(0,212,255,0.1); transform: translateX(6px); }
+
+    /* PROJECTS */
+    #projects { padding: 100px 0; position: relative; z-index: 1; }
+    .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.23,1,0.32,1); position: relative; }
+    .project-card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); box-shadow: inset 0 0 30px rgba(0,212,255,0); transition: box-shadow 0.4s; pointer-events: none; }
+    .project-card:hover { border-color: rgba(0,212,255,0.45); transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,255,0.12); }
+    .project-card:hover::after { box-shadow: inset 0 0 30px rgba(0,212,255,0.06); }
+    .project-img-wrap { position: relative; overflow: hidden; height: 200px; }
+    .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .project-card:hover .project-img { transform: scale(1.08); }
+    .project-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(3,7,18,0.9) 100%); }
+    .project-category { position: absolute; top: 12px; left: 12px; background: rgba(0,102,255,0.85); color: #fff; font-family: 'Share Tech Mono', monospace; font-size: 11px; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; }
+    .project-body { padding: 20px; }
+    .project-title { font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+    .tech-tag { display: inline-block; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); color: var(--cyan); font-family: 'Share Tech Mono', monospace; font-size: 10px; padding: 3px 8px; border-radius: 4px; margin: 2px; }
+
+    /* CONTACT */
+    #contact { padding: 100px 0; position: relative; z-index: 1; }
+    .contact-input { width: 100%; background: rgba(10,20,40,0.6); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: all 0.3s; backdrop-filter: blur(10px); }
+    .contact-input:focus { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0,212,255,0.15); }
+    .contact-input::placeholder { color: #475569; }
+    .contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 16px; transition: all 0.3s; cursor: pointer; }
+    .contact-card:hover { border-color: var(--cyan); transform: translateX(6px); box-shadow: 0 8px 30px rgba(0,212,255,0.1); }
+    .contact-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: rgba(1,4,9,0.95); border-top: 1px solid var(--border); padding: 60px 0 30px; position: relative; z-index: 1; }
+    .footer-link { color: #64748b; font-size: 13px; text-decoration: none; transition: color 0.3s; font-family: 'Share Tech Mono', monospace; }
+    .footer-link:hover { color: var(--cyan); }
+    .social-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 16px; text-decoration: none; transition: all 0.3s; }
+    .social-icon:hover { background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 20px rgba(0,212,255,0.2); transform: translateY(-3px); }
+    .back-top { position: fixed; bottom: 30px; right: 30px; width: 46px; height: 46px; background: linear-gradient(135deg, var(--blue), var(--purple)); border: none; border-radius: 10px; color: #fff; font-size: 16px; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 999; transition: all 0.3s; box-shadow: 0 0 20px rgba(0,102,255,0.4); }
+    .back-top.show { display: flex; }
+    .back-top:hover { transform: translateY(-4px); box-shadow: 0 0 30px rgba(0,102,255,0.6); }
+
+    /* ADMIN */
+    #admin-section { display: none; min-height: 100vh; background: #030712; }
+    #admin-section.active { display: flex; }
+    .admin-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #030712; width: 100%; }
+    .login-card { width: 100%; max-width: 420px; background: rgba(5,15,35,0.95); border: 1px solid var(--border-glow); border-radius: 16px; padding: 48px 40px; backdrop-filter: blur(20px); box-shadow: 0 0 60px rgba(0,102,255,0.15); animation: fadeInUp 0.6s ease; }
+    .login-input { width: 100%; background: rgba(10,20,40,0.6); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; color: #e2e8f0; font-size: 14px; outline: none; transition: all 0.3s; font-family: 'Inter', sans-serif; }
+    .login-input:focus { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0,212,255,0.15); }
+
+    /* SIDEBAR */
+    .admin-sidebar { width: 260px; min-height: 100vh; background: rgba(1,4,9,0.98); border-right: 1px solid var(--border); padding: 24px 16px; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; transition: transform 0.3s ease; }
+    .sidebar-logo { font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; padding: 0 8px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .sidebar-nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 8px; color: #64748b; cursor: pointer; font-size: 13px; font-family: 'Share Tech Mono', monospace; letter-spacing: 0.5px; transition: all 0.3s; margin-bottom: 4px; border: 1px solid transparent; }
+    .sidebar-nav-item:hover { color: var(--cyan); background: rgba(0,212,255,0.06); border-color: var(--border); }
+    .sidebar-nav-item.active { color: var(--cyan); background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.25); }
+    .sidebar-nav-item .icon { width: 18px; text-align: center; }
+    .admin-main { flex: 1; padding: 32px; overflow-y: auto; max-height: 100vh; }
+    .dashboard-page { display: none; animation: fadeInUp 0.4s ease; }
+    .dashboard-page.active { display: block; }
+    .admin-card { background: rgba(5,15,35,0.8); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; backdrop-filter: blur(10px); transition: border-color 0.3s; }
+    .admin-card:hover { border-color: rgba(0,212,255,0.3); }
+    .analytics-card { background: rgba(5,15,35,0.8); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; backdrop-filter: blur(10px); transition: all 0.3s; }
+    .analytics-card:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.3); }
+    .analytics-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .admin-table { width: 100%; border-collapse: collapse; }
+    .admin-table th { background: rgba(0,212,255,0.06); border-bottom: 1px solid var(--border); padding: 12px 16px; text-align: left; font-family: 'Share Tech Mono', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--cyan); text-transform: uppercase; }
+    .admin-table td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 13px; color: #cbd5e1; }
+    .admin-table tr:hover td { background: rgba(0,212,255,0.03); }
+
+    /* MODALS */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: rgba(5,15,35,0.98); border: 1px solid var(--border-glow); border-radius: 16px; padding: 32px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; animation: fadeInUp 0.3s ease; box-shadow: 0 0 60px rgba(0,102,255,0.2); }
+    .modal-title { font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 24px; }
+
+    .form-label { font-size: 12px; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px; color: var(--cyan); margin-bottom: 6px; display: block; }
+    .form-input { width: 100%; background: rgba(10,20,40,0.7); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 13px; outline: none; transition: all 0.3s; margin-bottom: 16px; }
+    .form-input:focus { border-color: var(--cyan); box-shadow: 0 0 15px rgba(0,212,255,0.12); }
+    textarea.form-input { resize: vertical; min-height: 100px; }
+    select.form-input { cursor: pointer; }
+    select.form-input option { background: #030712; }
+
+    /* TOAST */
+    #toast-container { position: fixed; top: 80px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+    .toast { min-width: 280px; padding: 14px 20px; border-radius: 10px; font-size: 13px; font-family: 'Share Tech Mono', monospace; display: flex; align-items: center; gap: 10px; animation: fadeInRight 0.4s ease, fadeOutRight 0.4s ease 2.8s forwards; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .toast-success { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); color: var(--green); }
+    .toast-error { background: rgba(244,63,94,0.1); border: 1px solid rgba(244,63,94,0.3); color: var(--pink); }
+    .toast-info { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--cyan); }
+
+    .skeleton { background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; }
+
+    .upload-zone { border: 2px dashed var(--border); border-radius: 10px; padding: 32px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
+    .upload-zone:hover, .upload-zone.dragover { border-color: var(--cyan); background: rgba(0,212,255,0.04); }
+    #proj-img-upload-zone { cursor: pointer; }
+    #proj-img-upload-zone:hover { border-color: rgba(0,212,255,0.5) !important; background: rgba(0,212,255,0.03); }
+    #proj-img-upload-zone.dragover { border-color: var(--cyan) !important; background: rgba(0,212,255,0.06); }
+    #proj-img-upload-zone:hover #proj-img-overlay { opacity: 1 !important; }
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-family: 'Share Tech Mono', monospace; font-weight: 500; }
+    .badge-cyan { background: rgba(0,212,255,0.12); color: var(--cyan); border: 1px solid rgba(0,212,255,0.25); }
+    .badge-purple { background: rgba(124,58,237,0.12); color: #a78bfa; border: 1px solid rgba(124,58,237,0.25); }
+    .badge-green { background: rgba(0,255,136,0.1); color: var(--green); border: 1px solid rgba(0,255,136,0.2); }
+    .badge-pink { background: rgba(244,63,94,0.1); color: var(--pink); border: 1px solid rgba(244,63,94,0.25); }
+
+    @media (max-width: 768px) {
+      #sidebar-toggle-btn { display: flex; }
+      .admin-sidebar { position: fixed; left: -280px; top: 0; z-index: 2999; width: 260px; transition: left 0.3s ease; }
+      .admin-sidebar.open { left: 0; }
+    }
+    #sidebar-toggle-btn { display: none; position: fixed; top: 16px; left: 16px; z-index: 3000; width: 40px; height: 40px; background: rgba(5,15,35,0.95); border: 1px solid var(--border); border-radius: 8px; color: var(--cyan); font-size: 18px; cursor: pointer; align-items: center; justify-content: center; }
+
+    .neon-hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent); opacity: 0.3; margin: 0; }
+    /* KHMER LANGUAGE STYLES */
+    body.lang-km { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', 'Inter', sans-serif; }
+    body.lang-km p, body.lang-km span, body.lang-km div, body.lang-km li, body.lang-km td { line-height: 1.9; }
+    body.lang-km .section-title { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; }
+    body.lang-km .nav-link, body.lang-km .footer-link, body.lang-km .font-mono, body.lang-km .font-orbit { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; }
+    body.lang-km .btn-primary span, body.lang-km .btn-outline, body.lang-km .btn-danger { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; font-size: 13px; }
+    body.lang-km .sidebar-nav-item { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; }
+    body.lang-km .section-tag { letter-spacing: 0.5px; font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; }
+    body.lang-km .hero-name { letter-spacing: -1px; }
+    body.lang-km .cat-btn { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif; letter-spacing: 0; }
+    .lang-switcher { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; }
+    .lang-btn { background: none; border: none; padding: 6px 10px; font-size: 12px; cursor: pointer; font-family: 'Share Tech Mono', monospace; color: #64748b; transition: all 0.3s; white-space: nowrap; }
+    .lang-btn.active { background: rgba(0,212,255,0.15); color: var(--cyan); }
+    .lang-btn:hover { color: var(--cyan); }
+    .hidden { display: none !important; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .flex-between { display: flex; align-items: center; justify-content: space-between; }
+    .flex-gap { display: flex; align-items: center; gap: 12px; }
+    .mt-4{margin-top:16px;} .mt-6{margin-top:24px;} .mt-8{margin-top:32px;}
+    .mb-2{margin-bottom:8px;} .mb-4{margin-bottom:16px;} .mb-6{margin-bottom:24px;} .mb-8{margin-bottom:32px;}
+    .text-sm{font-size:13px;} .text-xs{font-size:11px;} .text-muted{color:var(--text-muted);}
+    .text-cyan{color:var(--cyan);} .text-white{color:#fff;} .text-center{text-align:center;}
+    .font-mono{font-family:'Share Tech Mono',monospace;} .font-orbit{font-family:'Orbitron',sans-serif;}
+
+    @media (max-width: 900px) { .responsive-2col { grid-template-columns: 1fr !important; gap: 40px !important; } .responsive-3col { grid-template-columns: 1fr 1fr !important; gap: 30px !important; } }
+    @media (max-width: 600px) { .responsive-3col { grid-template-columns: 1fr !important; } }
+
+    /* THEME TOGGLE BUTTON */
+    .theme-toggle-btn { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; flex-shrink: 0; }
+    .theme-toggle-btn:hover { background: rgba(0,212,255,0.12); border-color: var(--cyan); color: var(--cyan); }
+
+    /* ══════════════════════ LIGHT MODE ══════════════════════ */
+    body.light-mode {
+      --card-bg: rgba(255,255,255,0.88);
+      --border: rgba(0,102,255,0.15);
+      --border-glow: rgba(0,102,255,0.3);
+      --text-muted: #475569;
+      --dark: #f0f4f8;
+      background: #f0f4f8;
+      color: #0f172a;
+    }
+    body.light-mode .cyber-grid { background-image: linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px); }
+    body.light-mode #navbar { background: transparent; }
+    body.light-mode #navbar.scrolled { background: rgba(248,250,252,0.96); border-bottom-color: rgba(0,102,255,0.12); box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    body.light-mode .nav-link { color: #475569; }
+    body.light-mode .nav-link:hover, body.light-mode .nav-link.active { color: var(--blue); }
+    body.light-mode .nav-link::after { background: var(--blue); }
+    body.light-mode .mobile-menu { background: rgba(248,250,252,0.98); border-bottom-color: rgba(0,102,255,0.12); }
+    body.light-mode .glass { background: rgba(255,255,255,0.85); border-color: rgba(0,102,255,0.12); box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    body.light-mode .glass-strong { background: rgba(255,255,255,0.97); border-color: rgba(0,102,255,0.22); }
+    body.light-mode .glow-cyan { box-shadow: 0 0 20px rgba(0,102,255,0.18), 0 0 60px rgba(0,102,255,0.06); }
+    body.light-mode .float-icon { background: rgba(255,255,255,0.88); border-color: rgba(0,102,255,0.15); }
+    body.light-mode .skill-card { background: rgba(255,255,255,0.88); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .skill-card:hover { border-color: rgba(0,102,255,0.3); box-shadow: 0 12px 35px rgba(0,102,255,0.1); }
+    body.light-mode .skill-bar-bg { background: rgba(0,0,0,0.07); }
+    body.light-mode .timeline-card { background: rgba(255,255,255,0.88); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .timeline-card:hover { border-color: var(--blue); box-shadow: 0 8px 30px rgba(0,102,255,0.1); }
+    body.light-mode .timeline::before { background: linear-gradient(180deg, var(--blue), var(--purple), var(--cyan)); box-shadow: none; }
+    body.light-mode .timeline-dot { background: #f0f4f8; border-color: var(--blue); box-shadow: 0 0 12px rgba(0,102,255,0.3); }
+    body.light-mode .timeline-item:hover .timeline-dot { background: var(--blue); }
+    body.light-mode .project-card { background: rgba(255,255,255,0.88); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .project-card:hover { border-color: rgba(0,102,255,0.4); box-shadow: 0 25px 60px rgba(0,0,0,0.12), 0 0 40px rgba(0,102,255,0.08); }
+    body.light-mode .project-title { color: #0f172a; }
+    body.light-mode .project-overlay { background: linear-gradient(180deg, transparent 0%, rgba(0,20,60,0.7) 100%); }
+    body.light-mode .contact-card { background: rgba(255,255,255,0.88); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .contact-card:hover { border-color: var(--blue); box-shadow: 0 8px 30px rgba(0,102,255,0.1); }
+    body.light-mode .contact-input { background: rgba(255,255,255,0.92); border-color: rgba(0,102,255,0.15); color: #0f172a; }
+    body.light-mode .contact-input:focus { border-color: var(--blue); box-shadow: 0 0 20px rgba(0,102,255,0.12); }
+    body.light-mode .contact-input::placeholder { color: #94a3b8; }
+    body.light-mode .stat-card { background: rgba(255,255,255,0.85); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .stat-card:hover { border-color: var(--blue); box-shadow: 0 8px 30px rgba(0,102,255,0.12); }
+    body.light-mode .about-image-frame { border-color: rgba(0,102,255,0.18); }
+    body.light-mode .about-image { border-color: rgba(0,102,255,0.25); }
+    body.light-mode .section-tag { background: rgba(0,102,255,0.07); border-color: rgba(0,102,255,0.2); }
+    body.light-mode footer { background: rgba(225,234,250,0.97); border-top-color: rgba(0,102,255,0.12); }
+    body.light-mode .footer-link { color: #64748b; }
+    body.light-mode .footer-link:hover { color: var(--blue); }
+    body.light-mode .social-icon { background: rgba(0,102,255,0.05); border-color: rgba(0,102,255,0.12); color: #64748b; }
+    body.light-mode .social-icon:hover { background: rgba(0,102,255,0.1); border-color: var(--blue); color: var(--blue); }
+    body.light-mode .cat-btn { background: rgba(0,102,255,0.04); border-color: rgba(0,102,255,0.12); color: #64748b; }
+    body.light-mode .cat-btn.active, body.light-mode .cat-btn:hover { background: rgba(0,102,255,0.1); border-color: var(--blue); color: var(--blue); }
+    body.light-mode .neon-hr { background: linear-gradient(90deg, transparent, var(--blue), var(--purple), transparent); }
+    body.light-mode .scan-line { background: linear-gradient(90deg, transparent, rgba(0,102,255,0.25), transparent); }
+    body.light-mode .hex-bg { background: radial-gradient(circle, rgba(0,102,255,0.05) 0%, transparent 70%); }
+    body.light-mode .hero-badge { background: rgba(0,102,255,0.06); border-color: rgba(0,102,255,0.25); }
+    body.light-mode .hero-desc { color: #475569; }
+    body.light-mode .tech-tag { background: rgba(0,102,255,0.07); border-color: rgba(0,102,255,0.18); color: var(--blue); }
+    body.light-mode .badge-cyan { background: rgba(0,102,255,0.08); color: var(--blue); border-color: rgba(0,102,255,0.2); }
+    body.light-mode .badge-purple { background: rgba(124,58,237,0.08); }
+    body.light-mode .badge-green { background: rgba(0,160,80,0.08); color: #16a34a; border-color: rgba(0,160,80,0.2); }
+    body.light-mode .toast { box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    body.light-mode #admin-section { background: #f0f4f8; }
+    body.light-mode .admin-login { background: #f0f4f8; }
+    body.light-mode .login-card { background: rgba(255,255,255,0.97); border-color: rgba(0,102,255,0.25); box-shadow: 0 0 60px rgba(0,102,255,0.08); }
+    body.light-mode .login-input { background: rgba(248,250,252,0.95); border-color: rgba(0,102,255,0.15); color: #0f172a; }
+    body.light-mode .login-input:focus { border-color: var(--blue); }
+    body.light-mode .admin-sidebar { background: rgba(225,234,250,0.99); border-right-color: rgba(0,102,255,0.12); }
+    body.light-mode .sidebar-logo { border-bottom-color: rgba(0,102,255,0.12); }
+    body.light-mode .sidebar-nav-item { color: #475569; }
+    body.light-mode .sidebar-nav-item:hover { color: var(--blue); background: rgba(0,102,255,0.07); border-color: rgba(0,102,255,0.12); }
+    body.light-mode .sidebar-nav-item.active { color: var(--blue); background: rgba(0,102,255,0.1); border-color: rgba(0,102,255,0.22); }
+    body.light-mode .admin-main { background: #f0f4f8; }
+    body.light-mode .admin-card { background: rgba(255,255,255,0.92); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .admin-card:hover { border-color: rgba(0,102,255,0.25); }
+    body.light-mode .analytics-card { background: rgba(255,255,255,0.92); border-color: rgba(0,102,255,0.1); }
+    body.light-mode .analytics-card:hover { border-color: var(--blue); box-shadow: 0 12px 35px rgba(0,0,0,0.08); }
+    body.light-mode .admin-table th { background: rgba(0,102,255,0.06); border-bottom-color: rgba(0,102,255,0.12); color: var(--blue); }
+    body.light-mode .admin-table td { color: #334155; border-bottom-color: rgba(0,0,0,0.05); }
+    body.light-mode .admin-table tr:hover td { background: rgba(0,102,255,0.03); }
+    body.light-mode .modal-overlay { background: rgba(0,0,0,0.5); }
+    body.light-mode .modal-box { background: rgba(255,255,255,0.99); border-color: rgba(0,102,255,0.25); box-shadow: 0 0 60px rgba(0,0,0,0.12); }
+    body.light-mode .form-label { color: var(--blue); }
+    body.light-mode .form-input { background: rgba(248,250,252,0.95); border-color: rgba(0,102,255,0.15); color: #0f172a; }
+    body.light-mode .form-input:focus { border-color: var(--blue); box-shadow: 0 0 15px rgba(0,102,255,0.1); }
+    body.light-mode .form-input option { background: #f8fafc; color: #0f172a; }
+    body.light-mode .upload-zone { border-color: rgba(0,102,255,0.2); }
+    body.light-mode .upload-zone:hover, body.light-mode .upload-zone.dragover { border-color: var(--blue); background: rgba(0,102,255,0.04); }
+    body.light-mode #proj-img-upload-zone { border-color: rgba(0,102,255,0.18) !important; }
+    body.light-mode #proj-img-upload-zone:hover { border-color: rgba(0,102,255,0.5) !important; background: rgba(0,102,255,0.03); }
+    body.light-mode .skeleton { background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%); }
+    body.light-mode .page-loader { background: #f0f4f8; }
+    body.light-mode .back-top { box-shadow: 0 0 20px rgba(0,102,255,0.25); }
+    body.light-mode .theme-toggle-btn { background: rgba(0,102,255,0.06); border-color: rgba(0,102,255,0.15); color: #475569; }
+    body.light-mode .theme-toggle-btn:hover { background: rgba(0,102,255,0.12); border-color: var(--blue); color: var(--blue); }
+    body.light-mode .lang-switcher { background: rgba(0,102,255,0.05); border-color: rgba(0,102,255,0.12); }
+    body.light-mode .lang-btn { color: #64748b; }
+    body.light-mode .lang-btn.active { background: rgba(0,102,255,0.12); color: var(--blue); }
+    body.light-mode ::-webkit-scrollbar-track { background: #e2eaf8; }
+    body.light-mode ::-webkit-scrollbar-thumb { background: var(--blue); }
+    body.light-mode #sidebar-toggle-btn { background: rgba(255,255,255,0.95); border-color: rgba(0,102,255,0.2); color: var(--blue); }
+
+    /* Loading overlay */
+    .page-loader { position: fixed; inset: 0; background: #030712; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; transition: opacity 0.5s; }
+    .page-loader.fade-out { opacity: 0; pointer-events: none; }
+    .loader-spinner { width: 40px; height: 40px; border: 3px solid rgba(0,212,255,0.2); border-top-color: var(--cyan); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+    <div class="font-mono text-xs text-cyan">INITIALIZING PORTFOLIO...</div>
+  </div>
+
+  <!-- Cyber Grid Background -->
+  <div class="cyber-grid" aria-hidden="true"></div>
+  <!-- Toast Container -->
+  <div id="toast-container" aria-live="polite"></div>
+  <!-- Back To Top -->
+  <button class="back-top" id="backTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ══════════════════════════════════════════════════════
+       PUBLIC PORTFOLIO SITE
+  ══════════════════════════════════════════════════════ -->
+  <div id="public-site">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" aria-label="Main navigation">
+      <div class="container flex-between">
+        <a href="#hero" class="nav-logo gradient-text text-glow-cyan" style="text-decoration:none">HO<span style="color:var(--cyan);">_</span></a>
+        <div class="desktop-nav flex-gap" style="gap:4px;">
+          <a href="#hero" class="nav-link active" data-section="hero" data-i18n="nav.home">Home</a>
+          <a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">About</a>
+          <a href="#skills" class="nav-link" data-section="skills" data-i18n="nav.skills">Skills</a>
+          <a href="#experience" class="nav-link" data-section="experience" data-i18n="nav.experience">Experience</a>
+          <a href="#projects" class="nav-link" data-section="projects" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="flex-gap" style="gap:12px;">
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" title="English">🇺🇸 EN</button>
+            <button class="lang-btn" id="btn-lang-km" onclick="setLanguage('km')" title="ភាសាខ្មែរ">🇰🇭 KH</button>
+          </div>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Switch to Light Mode" aria-label="Switch to Light Mode">
+            <i class="fas fa-sun" id="theme-icon"></i>
+          </button>
+          <a href="#admin" id="nav-admin-btn" onclick="showAdmin(event)" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#64748b;text-decoration:none;border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:6px;transition:all 0.3s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='rgba(0,212,255,0.3)'" onmouseout="this.style.color='#64748b';this.style.borderColor='rgba(255,255,255,0.08)'">
+            <i class="fas fa-shield-halved" style="margin-right:6px;"></i><span data-i18n="nav.admin">ADMIN</span>
+          </a>
+          <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+      <a href="#hero" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
+      <a href="#skills" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.experience">Experience</a>
+      <a href="#projects" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav-link" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="particle-canvas" aria-hidden="true"></canvas>
+      <div class="scan-line" aria-hidden="true"></div>
+      <div class="hex-bg" aria-hidden="true"></div>
+      <div class="container hero-content" style="padding-top:80px;">
+        <div style="max-width:650px;">
+          <div class="hero-badge mb-4"><span data-i18n="hero.badge">> CYBERSECURITY_PORTFOLIO.EXE</span></div>
+          <h1 class="hero-name gradient-text mb-4" id="hero-name">Horn Oudom</h1>
+          <div class="typing-wrapper mb-6" style="min-height:36px;">
+            <span style="color:#475569;">// </span>
+            <span id="typed-text"></span>
+            <span class="cursor" aria-hidden="true"></span>
+          </div>
+          <p class="hero-desc mb-8" id="hero-desc">
+            <span data-i18n="hero.desc">Passionate about network security and ethical hacking. Specializing in FortiGate &amp; MikroTik configurations, penetration testing, and building robust security architectures.</span>
+          </p>
+          <div class="hero-buttons flex-gap" style="flex-wrap:wrap;gap:16px;">
+            <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+              <span><i class="fas fa-code" style="margin-right:8px;"></i><span data-i18n="hero.btn.projects">View Projects</span></span>
+            </button>
+            <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              <i class="fas fa-paper-plane" style="margin-right:8px;"></i><span data-i18n="hero.btn.contact">Contact Me</span>
+            </button>
+            <a id="hero-view-cv-btn" href="#" target="_blank" rel="noopener" class="btn-outline hidden" style="text-decoration:none;border-color:var(--green);color:var(--green);">
+              <i class="fas fa-eye" style="margin-right:8px;"></i><span data-i18n="hero.btn.view.cv">View CV</span>
+            </a>
+            <a id="hero-download-cv-btn" href="#" download class="btn-primary hidden" style="text-decoration:none;background:linear-gradient(135deg,var(--green),var(--blue));">
+              <span><i class="fas fa-download" style="margin-right:8px;"></i><span data-i18n="hero.btn.download.cv">Download CV</span></span>
+            </a>
+          </div>
+          <!-- Terminal snippet -->
+          <div class="glass mt-8" style="padding:16px 20px;max-width:420px;background:rgba(0,0,0,0.5);">
+            <div class="flex-gap mb-2" style="gap:6px;">
+              <span style="width:10px;height:10px;background:#f43f5e;border-radius:50%;"></span>
+              <span style="width:10px;height:10px;background:#f59e0b;border-radius:50%;"></span>
+              <span style="width:10px;height:10px;background:#00ff88;border-radius:50%;"></span>
+              <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#475569;margin-left:8px;">terminal</span>
+            </div>
+            <div class="font-mono text-xs" style="line-height:1.8;">
+              <span style="color:#475569;">root@kali:~$ </span><span style="color:var(--green);">whoami</span><br>
+              <span style="color:var(--cyan);">horn_oudom</span><br>
+              <span style="color:#475569;">root@kali:~$ </span><span style="color:var(--green);">cat skills.txt</span><br>
+              <span style="color:#a78bfa;">FortiGate | MikroTik | Linux | Wireshark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-floating-icons" aria-hidden="true">
+        <div class="float-icon glow-cyan"><i class="fas fa-shield-halved" style="color:var(--cyan);"></i></div>
+        <div class="float-icon"><i class="fas fa-network-wired" style="color:var(--blue);"></i></div>
+        <div class="float-icon glow-purple"><i class="fas fa-lock" style="color:#a78bfa;"></i></div>
+        <div class="float-icon"><i class="fab fa-linux" style="color:var(--green);"></i></div>
+        <div class="float-icon"><i class="fas fa-bug" style="color:var(--pink);"></i></div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="mouse"><div class="wheel"></div></div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#475569;text-align:center;margin-top:6px;letter-spacing:2px;">SCROLL</div>
+      </div>
+    </section>
+
+    <hr class="neon-hr">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="text-center mb-8 anim-fade-up">
+          <div class="section-tag" style="display:inline-flex;"><i class="fas fa-user-secret"></i> <span data-i18n="about.tag">ABOUT.ME</span></div>
+          <h2 class="section-title gradient-text" data-i18n="about.title">Who I Am</h2>
+          <div class="section-divider" style="margin:12px auto 0;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;" class="responsive-2col">
+          <!-- Left -->
+          <div class="text-center anim-fade-left">
+            <div style="display:inline-block;position:relative;">
+              <div class="about-image-frame" aria-hidden="true"></div>
+              <img id="about-photo" src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=400&q=80"
+                alt="Horn Oudom – Cybersecurity professional profile photo" class="about-image" loading="lazy" />
+              <div class="about-tag">
+                <div class="font-mono" style="color:var(--cyan);">STATUS</div>
+                <div style="font-size:14px;font-weight:600;margin-top:2px;" data-i18n="about.status">Available for hire</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;">
+              <div class="stat-card anim-fade-up delay-100">
+                <div class="stat-num gradient-text counter" data-target="10">0</div>
+                <div class="text-muted text-xs font-mono" style="margin-top:4px;" data-i18n="about.stat.projects">PROJECTS</div>
+              </div>
+              <div class="stat-card anim-fade-up delay-200">
+                <div class="stat-num gradient-text counter" data-target="15">0</div>
+                <div class="text-muted text-xs font-mono" style="margin-top:4px;" data-i18n="about.stat.tech">TECHNOLOGIES</div>
+              </div>
+              <div class="stat-card anim-fade-up delay-300">
+                <div class="stat-num gradient-text counter" data-target="5">0</div>
+                <div class="text-muted text-xs font-mono" style="margin-top:4px;" data-i18n="about.stat.labs">SECURITY LABS</div>
+              </div>
+            </div>
+          </div>
+          <!-- Right -->
+          <div class="anim-fade-right">
+            <div class="section-tag"><i class="fas fa-terminal"></i> PROFILE</div>
+            <h3 class="font-orbit" style="font-size:26px;font-weight:700;margin-bottom:16px;" id="about-name">Horn Oudom</h3>
+            <div class="badge badge-cyan font-mono mb-4" id="about-title">Cybersecurity Enthusiast &amp; Network Security Learner</div>
+            <p class="text-muted" style="line-height:1.9;margin-bottom:20px;font-size:14px;" id="about-bio">
+              I'm a passionate cybersecurity enthusiast with a deep focus on network security, ethical hacking, and infrastructure protection.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+              <div class="glass" style="padding:12px 16px;display:flex;align-items:center;gap:12px;">
+                <i class="fas fa-graduation-cap" style="color:var(--cyan);width:18px;"></i>
+                <span class="text-muted text-sm">Computer Science – Cybersecurity Major</span>
+              </div>
+              <div class="glass" style="padding:12px 16px;display:flex;align-items:center;gap:12px;">
+                <i class="fas fa-location-dot" style="color:var(--purple);width:18px;"></i>
+                <span class="text-muted text-sm">Cambodia</span>
+              </div>
+              <div class="glass" style="padding:12px 16px;display:flex;align-items:center;gap:12px;">
+                <i class="fas fa-bullseye" style="color:var(--green);width:18px;"></i>
+                <span class="text-muted text-sm">Goal: Certified Ethical Hacker &amp; Security Architect</span>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;" id="about-tags">
+              <span class="tech-tag">Network Security</span><span class="tech-tag">FortiGate</span>
+              <span class="tech-tag">MikroTik</span><span class="tech-tag">Linux</span>
+              <span class="tech-tag">PHP/MySQL</span><span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Pen Testing</span><span class="tech-tag">Wireshark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="neon-hr">
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="text-center mb-8 anim-fade-up">
+          <div class="section-tag" style="display:inline-flex;"><i class="fas fa-microchip"></i> <span data-i18n="skills.tag">CAPABILITIES</span></div>
+          <h2 class="section-title gradient-text" data-i18n="skills.title">Technical Skills</h2>
+          <div class="section-divider" style="margin:12px auto 0;"></div>
+        </div>
+          <div class="flex-center mb-8" style="flex-wrap:wrap;gap:10px;" id="skill-filter" role="group" aria-label="Skill category filter">
+          <button class="cat-btn active" data-cat="all" onclick="filterSkills(this,'all')" data-i18n="skills.filter.all">All</button>
+          <button class="cat-btn" data-cat="Cybersecurity" onclick="filterSkills(this,'Cybersecurity')" data-i18n="skills.filter.cyber">Cybersecurity</button>
+          <button class="cat-btn" data-cat="Networking" onclick="filterSkills(this,'Networking')" data-i18n="skills.filter.network">Networking</button>
+          <button class="cat-btn" data-cat="Web Development" onclick="filterSkills(this,'Web Development')" data-i18n="skills.filter.web">Web Dev</button>
+          <button class="cat-btn" data-cat="System Administration" onclick="filterSkills(this,'System Administration')" data-i18n="skills.filter.sysadmin">SysAdmin</button>
+        </div>
+        <div id="skills-grid" class="grid-3">
+          <!-- Skeleton loaders -->
+          <div class="skill-card skeleton" style="height:90px;"></div>
+          <div class="skill-card skeleton" style="height:90px;"></div>
+          <div class="skill-card skeleton" style="height:90px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="neon-hr">
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <div class="text-center mb-8 anim-fade-up">
+          <div class="section-tag" style="display:inline-flex;"><i class="fas fa-road"></i> <span data-i18n="exp.tag">JOURNEY</span></div>
+          <h2 class="section-title gradient-text" data-i18n="exp.title">Experience &amp; Timeline</h2>
+          <div class="section-divider" style="margin:12px auto 0;"></div>
+        </div>
+        <div style="max-width:720px;margin:0 auto;">
+          <div class="timeline" id="timeline-list">
+            <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
+            <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="neon-hr">
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="text-center mb-8 anim-fade-up">
+          <div class="section-tag" style="display:inline-flex;"><i class="fas fa-folder-open"></i> <span data-i18n="projects.tag">PORTFOLIO</span></div>
+          <h2 class="section-title gradient-text" data-i18n="projects.title">Featured Projects</h2>
+          <div class="section-divider" style="margin:12px auto 0;"></div>
+        </div>
+          <div class="flex-center mb-8" style="flex-wrap:wrap;gap:10px;" id="project-filter">
+          <button class="cat-btn active" onclick="filterProjects(this,'all')" data-i18n="projects.filter.all">All</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Security')" data-i18n="projects.filter.security">Security</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Web')" data-i18n="projects.filter.web">Web</button>
+          <button class="cat-btn" onclick="filterProjects(this,'Networking')" data-i18n="projects.filter.network">Networking</button>
+        </div>
+        <div class="grid-3" id="projects-grid">
+          <div class="project-card skeleton" style="height:300px;"></div>
+          <div class="project-card skeleton" style="height:300px;"></div>
+          <div class="project-card skeleton" style="height:300px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="neon-hr">
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="text-center mb-8 anim-fade-up">
+          <div class="section-tag" style="display:inline-flex;"><i class="fas fa-satellite-dish"></i> <span data-i18n="contact.tag">CONNECT</span></div>
+          <h2 class="section-title gradient-text" data-i18n="contact.title">Get In Touch</h2>
+          <div class="section-divider" style="margin:12px auto 0;"></div>
+          <p class="text-muted" style="margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;font-size:14px;" data-i18n="contact.subtitle">Whether you have a question, project idea, or just want to say hello — my inbox is always open.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="responsive-2col">
+          <div class="anim-fade-left">
+            <div class="glass" style="padding:32px;">
+              <h3 class="font-orbit" style="font-size:18px;margin-bottom:24px;color:#fff;">
+                <i class="fas fa-paper-plane" style="color:var(--cyan);margin-right:10px;"></i><span data-i18n="contact.form.title">Send a Message</span>
+              </h3>
+              <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="mb-4">
+                  <label class="form-label" data-i18n="contact.form.name">Name</label>
+                  <input type="text" name="name" class="contact-input" data-i18n-ph="contact.form.name.ph" placeholder="Your name" required />
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" data-i18n="contact.form.email">Email</label>
+                  <input type="email" name="email" class="contact-input" placeholder="your@email.com" required />
+                </div>
+                <div class="mb-6">
+                  <label class="form-label" data-i18n="contact.form.message">Message</label>
+                  <textarea name="message" class="contact-input" data-i18n-ph="contact.form.msg.ph" placeholder="Your message..." rows="5" required style="resize:vertical;"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;" id="contact-submit-btn">
+                  <span><i class="fas fa-shield-halved" style="margin-right:8px;"></i><span data-i18n="contact.form.btn">SEND MESSAGE</span></span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="anim-fade-right" style="display:flex;flex-direction:column;gap:16px;" id="contact-cards">
+            <a id="cc-telegram" href="https://t.me/hornoudom" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;">
+              <div class="contact-icon" style="background:rgba(0,136,204,0.15);"><i class="fab fa-telegram" style="color:#0088cc;"></i></div>
+              <div><div class="text-xs font-mono text-muted mb-1">TELEGRAM</div><div id="cc-telegram-val" style="font-size:14px;color:#e2e8f0;">@hornoudom</div></div>
+              <i class="fas fa-arrow-right" style="margin-left:auto;color:var(--cyan);opacity:0.5;"></i>
+            </a>
+            <a id="cc-github" href="https://github.com/hornoudom" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;">
+              <div class="contact-icon" style="background:rgba(255,255,255,0.06);"><i class="fab fa-github" style="color:#e2e8f0;"></i></div>
+              <div><div class="text-xs font-mono text-muted mb-1">GITHUB</div><div id="cc-github-val" style="font-size:14px;color:#e2e8f0;">github.com/hornoudom</div></div>
+              <i class="fas fa-arrow-right" style="margin-left:auto;color:var(--cyan);opacity:0.5;"></i>
+            </a>
+            <a id="cc-linkedin" href="https://linkedin.com/in/hornoudom" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;">
+              <div class="contact-icon" style="background:rgba(0,119,181,0.15);"><i class="fab fa-linkedin" style="color:#0077b5;"></i></div>
+              <div><div class="text-xs font-mono text-muted mb-1">LINKEDIN</div><div id="cc-linkedin-val" style="font-size:14px;color:#e2e8f0;">linkedin.com/in/hornoudom</div></div>
+              <i class="fas fa-arrow-right" style="margin-left:auto;color:var(--cyan);opacity:0.5;"></i>
+            </a>
+            <a id="cc-email" href="mailto:hornoudom@email.com" class="contact-card" style="text-decoration:none;">
+              <div class="contact-icon" style="background:rgba(0,212,255,0.1);"><i class="fas fa-envelope" style="color:var(--cyan);"></i></div>
+              <div><div class="text-xs font-mono text-muted mb-1">EMAIL</div><div id="cc-email-val" style="font-size:14px;color:#e2e8f0;">hornoudom@email.com</div></div>
+              <i class="fas fa-arrow-right" style="margin-left:auto;color:var(--cyan);opacity:0.5;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:48px;" class="responsive-3col">
+          <div>
+            <div class="nav-logo gradient-text" style="font-size:22px;margin-bottom:16px;">Horn Oudom</div>
+          <p class="text-muted" style="font-size:13px;line-height:1.8;max-width:300px;" data-i18n="footer.tagline">Cybersecurity enthusiast and network security learner. Building secure digital futures one packet at a time.</p>
+            <div class="flex-gap" style="margin-top:20px;gap:10px;" id="footer-social">
+              <a id="footer-telegram" href="https://t.me/hornoudom" class="social-icon" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+              <a id="footer-github" href="https://github.com/hornoudom" class="social-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a id="footer-linkedin" href="https://linkedin.com/in/hornoudom" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a id="footer-email" href="mailto:hornoudom@email.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-orbit" style="font-size:13px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:1px;" data-i18n="footer.nav">NAVIGATION</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <a href="#hero" class="footer-link">Home</a><a href="#about" class="footer-link">About</a>
+              <a href="#skills" class="footer-link">Skills</a><a href="#experience" class="footer-link">Experience</a>
+              <a href="#projects" class="footer-link">Projects</a><a href="#contact" class="footer-link">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-orbit" style="font-size:13px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:1px;" data-i18n="footer.expertise">EXPERTISE</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <span class="footer-link">FortiGate Security</span><span class="footer-link">MikroTik Networks</span>
+              <span class="footer-link">Linux Systems</span><span class="footer-link">Pen Testing</span>
+              <span class="footer-link">Web Development</span>
+            </div>
+          </div>
+        </div>
+        <hr class="neon-hr" style="margin-bottom:24px;">
+        <div class="flex-between" style="flex-wrap:wrap;gap:16px;">
+          <p class="font-mono text-xs" style="color:#334155;">© 2025 Horn Oudom · All Rights Reserved · Built with <span style="color:var(--pink);">❤</span> &amp; Security in Mind</p>
+          <span class="font-mono text-xs" style="color:#334155;"><i class="fas fa-shield-halved" style="color:var(--green);margin-right:6px;"></i>SECURED &amp; ENCRYPTED</span>
+        </div>
+      </div>
+    </footer>
+  </div><!-- /public-site -->
+
+  <!-- ══════════════════════════════════════════════════════
+       ADMIN SECTION
+  ══════════════════════════════════════════════════════ -->
+  <div id="admin-section">
+    <!-- LOGIN -->
+    <div id="admin-login" class="admin-login" style="position:relative;z-index:10;">
+      <div class="cyber-grid" aria-hidden="true"></div>
+      <div class="login-card" style="position:relative;z-index:2;">
+        <div class="text-center mb-8">
+          <div style="width:60px;height:60px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;">
+            <i class="fas fa-shield-halved" style="color:#fff;"></i>
+          </div>
+          <h2 class="font-orbit" style="font-size:22px;font-weight:700;color:#fff;margin-bottom:6px;" data-i18n="admin.title">Admin Access</h2>
+          <p class="text-muted text-sm font-mono" data-i18n="admin.subtitle">SECURE_LOGIN // SUPABASE AUTH</p>
+        </div>
+        <div id="login-error" class="hidden" style="background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.3);color:var(--pink);padding:12px;border-radius:8px;font-size:13px;margin-bottom:16px;text-align:center;"></div>
+        <!-- Login view -->
+        <div id="login-view">
+          <form id="login-form" onsubmit="handleAdminLogin(event)">
+            <div class="mb-4">
+              <label class="form-label" data-i18n="admin.email">Email</label>
+              <input type="email" id="login-email" class="login-input" placeholder="admin@email.com" required autocomplete="username" />
+            </div>
+            <div class="mb-6" style="position:relative;">
+              <label class="form-label" data-i18n="admin.password">Password</label>
+              <input type="password" id="login-password" class="login-input" placeholder="••••••••••" required autocomplete="current-password" />
+              <i class="fas fa-eye" id="pwd-toggle" style="position:absolute;right:14px;top:36px;color:#475569;cursor:pointer;font-size:14px;" onclick="togglePasswordVisibility()"></i>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;" id="login-btn">
+              <span><i class="fas fa-right-to-bracket" style="margin-right:8px;"></i><span data-i18n="admin.login.btn">ACCESS DASHBOARD</span></span>
+            </button>
+          </form>
+          <div class="text-center mt-4">
+            <button onclick="showForgotView()" style="background:none;border:none;color:var(--cyan);cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:12px;" data-i18n="admin.forgot">Forgot password?</button>
+          </div>
+        </div>
+        <!-- Forgot / OTP Reset view -->
+        <div id="forgot-view" class="hidden">
+          <p class="text-muted text-sm mb-4" style="text-align:center;">Enter your email to receive a reset OTP.</p>
+          <form id="forgot-form" onsubmit="handleForgotPassword(event)">
+            <div class="mb-4">
+              <label class="form-label">Email</label>
+              <input type="email" id="forgot-email" class="login-input" placeholder="admin@email.com" required />
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;" id="forgot-btn">
+              <span><i class="fas fa-paper-plane" style="margin-right:8px;"></i>SEND OTP</span>
+            </button>
+          </form>
+          <div class="text-center mt-4">
+            <button onclick="showLoginView()" style="background:none;border:none;color:#64748b;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:12px;">← Back to login</button>
+          </div>
+        </div>
+        <!-- OTP Verify + New Password view -->
+        <div id="otp-view" class="hidden">
+          <p class="text-muted text-sm mb-4" style="text-align:center;">Enter the OTP sent to your email and set a new password.</p>
+          <form id="otp-form" onsubmit="handleOtpVerify(event)">
+            <div class="mb-4">
+              <label class="form-label">OTP Code</label>
+              <input type="text" id="otp-code" class="login-input" placeholder="6-digit code" maxlength="6" required />
+            </div>
+            <div class="mb-6" style="position:relative;">
+              <label class="form-label">New Password</label>
+              <input type="password" id="new-password" class="login-input" placeholder="Min 6 characters" required minlength="6" />
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;" id="otp-btn">
+              <span><i class="fas fa-key" style="margin-right:8px;"></i>RESET PASSWORD</span>
+            </button>
+          </form>
+        </div>
+        <div class="text-center mt-4">
+          <button onclick="exitAdmin()" class="footer-link" style="background:none;border:none;cursor:pointer;font-size:12px;">
+            <i class="fas fa-arrow-left" style="margin-right:6px;"></i>Back to Portfolio
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="admin-dashboard" class="hidden" style="display:flex;width:100%;min-height:100vh;">
+      <button id="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
+      <aside class="admin-sidebar" id="admin-sidebar" role="navigation" aria-label="Admin navigation">
+        <div class="sidebar-logo flex-gap" style="gap:10px;">
+          <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-shield-halved" style="color:#fff;font-size:14px;"></i>
+          </div>
+          <span>Admin Panel</span>
+        </div>
+        <div>
+          <div class="sidebar-nav-item active" data-page="overview" onclick="switchPage('overview')"><i class="fas fa-gauge icon"></i><span data-i18n="admin.nav.overview">Overview</span></div>
+          <div class="sidebar-nav-item" data-page="profile" onclick="switchPage('profile')"><i class="fas fa-user icon"></i><span data-i18n="admin.nav.profile">Profile</span></div>
+          <div class="sidebar-nav-item" data-page="projects" onclick="switchPage('projects')"><i class="fas fa-folder icon"></i><span data-i18n="admin.nav.projects">Projects</span></div>
+          <div class="sidebar-nav-item" data-page="skills" onclick="switchPage('skills')"><i class="fas fa-code icon"></i><span data-i18n="admin.nav.skills">Skills</span></div>
+          <div class="sidebar-nav-item" data-page="media" onclick="switchPage('media')"><i class="fas fa-images icon"></i><span data-i18n="admin.nav.media">Media</span></div>
+          <div class="sidebar-nav-item" data-page="cv" onclick="switchPage('cv')"><i class="fas fa-file-pdf icon"></i><span data-i18n="admin.nav.cv">CV / Resume</span></div>
+        </div>
+        <div style="position:absolute;bottom:20px;left:16px;right:16px;">
+          <div class="sidebar-nav-item" onclick="viewPortfolio()"><i class="fas fa-eye icon"></i><span data-i18n="admin.nav.viewsite">View Site</span></div>
+          <div class="sidebar-nav-item" style="color:var(--pink);" onclick="handleAdminLogout()"><i class="fas fa-right-from-bracket icon"></i><span data-i18n="admin.nav.logout">Logout</span></div>
+        </div>
+      </aside>
+      <main class="admin-main">
+        <!-- Overview -->
+        <div class="dashboard-page active" id="page-overview">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div>
+              <h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">Dashboard Overview</h1>
+              <p class="text-muted text-sm font-mono mt-1">Welcome back, <span id="admin-user-email" style="color:var(--cyan);">Admin</span></p>
+            </div>
+            <div class="glass" style="padding:10px 16px;display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);"></div>
+              <span class="font-mono text-xs" style="color:var(--green);">SUPABASE CONNECTED</span>
+            </div>
+          </div>
+          <div class="grid-4 mb-8">
+            <div class="analytics-card anim-fade-up">
+              <div class="flex-between mb-4"><div class="analytics-icon" style="background:rgba(0,102,255,0.15);"><i class="fas fa-folder" style="color:var(--blue);"></i></div><span class="badge badge-cyan">TOTAL</span></div>
+              <div class="font-orbit" style="font-size:32px;font-weight:700;color:#fff;" id="stat-projects">—</div>
+              <div class="text-muted text-sm font-mono mt-2">Projects</div>
+            </div>
+            <div class="analytics-card anim-fade-up delay-100">
+              <div class="flex-between mb-4"><div class="analytics-icon" style="background:rgba(0,212,255,0.12);"><i class="fas fa-code" style="color:var(--cyan);"></i></div><span class="badge badge-cyan">TOTAL</span></div>
+              <div class="font-orbit" style="font-size:32px;font-weight:700;color:#fff;" id="stat-skills">—</div>
+              <div class="text-muted text-sm font-mono mt-2">Skills</div>
+            </div>
+            <div class="analytics-card anim-fade-up delay-200">
+              <div class="flex-between mb-4"><div class="analytics-icon" style="background:rgba(124,58,237,0.15);"><i class="fas fa-images" style="color:#a78bfa;"></i></div><span class="badge badge-purple">MEDIA</span></div>
+              <div class="font-orbit" style="font-size:32px;font-weight:700;color:#fff;" id="stat-media">—</div>
+              <div class="text-muted text-sm font-mono mt-2">Media Files</div>
+            </div>
+            <div class="analytics-card anim-fade-up delay-300">
+              <div class="flex-between mb-4"><div class="analytics-icon" style="background:rgba(0,255,136,0.1);"><i class="fas fa-shield-halved" style="color:var(--green);"></i></div><span class="badge badge-green">STATUS</span></div>
+              <div class="font-orbit" style="font-size:22px;font-weight:700;color:var(--green);">SECURE</div>
+              <div class="text-muted text-sm font-mono mt-2">System Status</div>
+            </div>
+          </div>
+          <div class="admin-card mb-6">
+            <div class="flex-between mb-4">
+              <h3 class="font-orbit" style="font-size:16px;color:#fff;">Recent Projects</h3>
+              <button class="btn-primary btn-sm" onclick="switchPage('projects')"><span>Manage</span></button>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="admin-table"><thead><tr><th>Title</th><th>Category</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="recent-projects-body"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="dashboard-page" id="page-profile">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div><h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">Profile Management</h1>
+            <p class="text-muted text-sm font-mono">Edit your public profile information</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 2fr;gap:28px;" class="responsive-2col">
+            <div class="admin-card" style="align-self:start;">
+              <h3 class="font-orbit" style="font-size:15px;color:#fff;margin-bottom:20px;">Profile Photo</h3>
+              <!-- Hidden real file input -->
+              <input type="file" id="photo-file-input" accept="image/*" style="display:none;" onchange="handlePhotoUpload(event)" />
+              <!-- Photo preview area (click triggers file picker) -->
+              <div id="photo-drop-zone" style="position:relative;border:2px dashed var(--border);border-radius:12px;padding:24px;text-align:center;transition:all 0.3s;cursor:pointer;" onclick="document.getElementById('photo-file-input').click()" ondragover="event.preventDefault();this.style.borderColor='var(--cyan)';this.style.background='rgba(0,212,255,0.04)'" ondragleave="this.style.borderColor='';this.style.background=''" ondrop="photoDrop(event)">
+                <div style="position:relative;display:inline-block;margin-bottom:12px;">
+                  <img id="admin-profile-preview" src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=200&q=80"
+                    alt="Profile photo preview" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--border);display:block;" />
+                  <div style="position:absolute;inset:0;border-radius:50%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;" id="photo-hover-overlay">
+                    <i class="fas fa-camera" style="color:#fff;font-size:20px;"></i>
+                  </div>
+                </div>
+                <p class="text-muted text-xs font-mono">Click or drag &amp; drop to replace</p>
+                <p class="text-xs font-mono" style="color:#334155;margin-top:4px;">JPG · PNG · WebP · Max 5MB</p>
+              </div>
+              <!-- Upload progress -->
+              <div id="photo-upload-progress" class="hidden" style="text-align:center;padding:16px 0;">
+                <div class="loader-spinner" style="margin:0 auto;width:24px;height:24px;border-width:2px;"></div>
+                <p class="text-xs font-mono text-cyan mt-2">Uploading to Supabase Storage...</p>
+              </div>
+              <!-- Upload button fallback -->
+              <button type="button" class="btn-outline btn-sm" style="width:100%;margin-top:12px;" onclick="document.getElementById('photo-file-input').click()">
+                <i class="fas fa-upload" style="margin-right:6px;"></i>Choose Photo
+              </button>
+            </div>
+            <div class="admin-card">
+              <h3 class="font-orbit" style="font-size:15px;color:#fff;margin-bottom:20px;">Basic Information</h3>
+              <form id="profile-form" onsubmit="handleProfileSave(event)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                  <div><label class="form-label">Full Name</label><input type="text" id="profile-name" class="form-input" placeholder="Horn Oudom" required /></div>
+                  <div><label class="form-label">Title</label><input type="text" id="profile-title" class="form-input" placeholder="Cybersecurity Enthusiast" required /></div>
+                </div>
+                <label class="form-label">Biography</label>
+                <textarea id="profile-bio" class="form-input" rows="4" placeholder="Tell your story..."></textarea>
+                <label class="form-label">Email</label>
+                <input type="email" id="profile-email" class="form-input" placeholder="your@email.com" />
+                <label class="form-label">Telegram</label>
+                <input type="text" id="profile-telegram" class="form-input" placeholder="@username" />
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                  <div><label class="form-label">GitHub URL</label><input type="url" id="profile-github" class="form-input" placeholder="https://github.com/..." /></div>
+                  <div><label class="form-label">LinkedIn URL</label><input type="url" id="profile-linkedin" class="form-input" placeholder="https://linkedin.com/..." /></div>
+                </div>
+                <button type="submit" class="btn-primary mt-2" id="save-profile-btn"><span><i class="fas fa-save" style="margin-right:8px;"></i>SAVE PROFILE</span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="dashboard-page" id="page-projects">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div><h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">Project Management</h1>
+            <p class="text-muted text-sm font-mono">Add, edit, and delete portfolio projects</p></div>
+            <button class="btn-primary" onclick="openProjectModal()"><span><i class="fas fa-plus" style="margin-right:8px;"></i>ADD PROJECT</span></button>
+          </div>
+          <div class="admin-card">
+            <div style="overflow-x:auto;">
+              <table class="admin-table"><thead><tr><th>Image</th><th>Title</th><th>Category</th><th>Technologies</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="admin-projects-body"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="dashboard-page" id="page-skills">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div><h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">Skills Management</h1>
+            <p class="text-muted text-sm font-mono">Manage your technical skill set</p></div>
+            <button class="btn-primary" onclick="openSkillModal()"><span><i class="fas fa-plus" style="margin-right:8px;"></i>ADD SKILL</span></button>
+          </div>
+          <div class="admin-card">
+            <div style="overflow-x:auto;">
+              <table class="admin-table"><thead><tr><th>Skill</th><th>Category</th><th>Percentage</th><th>Progress</th><th>Actions</th></tr></thead>
+              <tbody id="admin-skills-body"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media -->
+        <div class="dashboard-page" id="page-media">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div><h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">Media Library</h1>
+            <p class="text-muted text-sm font-mono">Manage uploaded images and files in Supabase Storage</p></div>
+            <button class="btn-primary" onclick="document.getElementById('media-upload-input').click()"><span><i class="fas fa-upload" style="margin-right:8px;"></i>UPLOAD FILE</span></button>
+          </div>
+          <input type="file" id="media-upload-input" accept="image/*" multiple style="display:none;" onchange="handleMediaUpload(event)" />
+          <div class="upload-zone admin-card mb-6" style="border-style:dashed;position:relative;">
+            <input type="file" accept="image/*" multiple style="position:absolute;inset:0;opacity:0;cursor:pointer;" onchange="handleMediaUpload(event)" />
+            <i class="fas fa-cloud-upload-alt" style="font-size:36px;color:var(--cyan);opacity:0.5;margin-bottom:12px;"></i>
+            <p class="text-muted font-mono text-sm">Drag &amp; drop files here or click to browse</p>
+            <p class="text-xs font-mono" style="color:#334155;margin-top:6px;">Supports: JPG, PNG, WebP, GIF · Max 10MB · Stored in Supabase Storage</p>
+          </div>
+          <div id="media-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;"></div>
+        </div>
+
+        <!-- CV / Resume -->
+        <div class="dashboard-page" id="page-cv">
+          <div class="flex-between mb-8" style="flex-wrap:wrap;gap:16px;">
+            <div><h1 class="font-orbit" style="font-size:24px;font-weight:700;color:#fff;">CV / Resume</h1>
+            <p class="text-muted text-sm font-mono">Upload your CV so visitors can view &amp; download it</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;" class="responsive-2col">
+            <!-- Upload card -->
+            <div class="admin-card">
+              <h3 class="font-orbit" style="font-size:15px;color:#fff;margin-bottom:20px;"><i class="fas fa-upload" style="color:var(--cyan);margin-right:8px;"></i>Upload CV</h3>
+              <input type="file" id="cv-file-input" accept="application/pdf,.doc,.docx" style="display:none;" onchange="handleCvUpload(event)" />
+              <div id="cv-drop-zone" class="upload-zone" style="margin-bottom:16px;" onclick="document.getElementById('cv-file-input').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="cvDrop(event)">
+                <i class="fas fa-file-pdf" style="font-size:40px;color:var(--cyan);opacity:0.5;margin-bottom:12px;display:block;"></i>
+                <p class="text-muted font-mono text-sm">Click or drag &amp; drop your CV here</p>
+                <p class="text-xs font-mono" style="color:#334155;margin-top:6px;">PDF · DOC · DOCX · Max 10MB · Stored in Supabase Storage</p>
+              </div>
+              <div id="cv-upload-progress" class="hidden" style="text-align:center;padding:16px;">
+                <div class="loader-spinner" style="margin:0 auto 8px;width:24px;height:24px;border-width:2px;"></div>
+                <p class="text-xs font-mono text-cyan">Uploading to Supabase Storage...</p>
+              </div>
+              <button type="button" class="btn-primary" style="width:100%;" onclick="document.getElementById('cv-file-input').click()">
+                <span><i class="fas fa-upload" style="margin-right:8px;"></i>Choose File</span>
+              </button>
+            </div>
+            <!-- Current CV card -->
+            <div class="admin-card">
+              <h3 class="font-orbit" style="font-size:15px;color:#fff;margin-bottom:20px;"><i class="fas fa-file-circle-check" style="color:var(--green);margin-right:8px;"></i>Current CV</h3>
+              <div id="cv-current-wrap">
+                <div id="cv-no-file" style="text-align:center;padding:40px 20px;color:#475569;font-family:'Share Tech Mono',monospace;font-size:13px;">
+                  <i class="fas fa-file-slash" style="font-size:36px;opacity:0.3;display:block;margin-bottom:12px;"></i>
+                  No CV uploaded yet
+                </div>
+                <div id="cv-file-info" class="hidden">
+                  <div class="glass" style="padding:20px;display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+                    <div style="width:48px;height:48px;background:rgba(244,63,94,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fas fa-file-pdf" style="color:var(--pink);font-size:22px;"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">CV Uploaded</div>
+                      <div id="cv-url-display" style="font-size:11px;color:#475569;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:10px;">
+                    <a id="cv-view-link" href="#" target="_blank" rel="noopener" class="btn-outline btn-sm" style="text-decoration:none;flex:1;text-align:center;"><i class="fas fa-eye" style="margin-right:6px;"></i>View</a>
+                    <a id="cv-download-link" href="#" download class="btn-primary btn-sm" style="text-decoration:none;flex:1;text-align:center;"><span><i class="fas fa-download" style="margin-right:6px;"></i>Download</span></a>
+                    <button class="btn-danger btn-sm" onclick="removeCv()" title="Remove CV"><i class="fas fa-trash"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Preview note -->
+          <div class="admin-card mt-6" style="background:rgba(0,212,255,0.04);border-color:rgba(0,212,255,0.2);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <i class="fas fa-circle-info" style="color:var(--cyan);font-size:18px;flex-shrink:0;"></i>
+              <p style="font-size:13px;color:#94a3b8;line-height:1.7;">Once uploaded, <strong style="color:var(--cyan);">View CV</strong> and <strong style="color:var(--cyan);">Download CV</strong> buttons will automatically appear in the hero section of your public portfolio for visitors to use.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div><!-- /admin-section -->
+
+  <!-- MODALS -->
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-label="Project form">
+    <div class="modal-box">
+      <div class="flex-between mb-6">
+        <h2 class="modal-title" id="project-modal-title">Add Project</h2>
+        <button onclick="closeProjectModal()" style="background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="project-form" onsubmit="handleProjectSave(event)">
+        <input type="hidden" id="project-id" />
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div><label class="form-label">Title *</label><input type="text" id="proj-title" class="form-input" placeholder="Project title" required /></div>
+          <div><label class="form-label">Category *</label>
+            <select id="proj-category" class="form-input" required>
+              <option value="">Select category</option>
+              <option value="Security">Security</option><option value="Web">Web</option>
+              <option value="Networking">Networking</option><option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <label class="form-label">Description *</label>
+        <textarea id="proj-description" class="form-input" rows="3" placeholder="Describe the project..." required></textarea>
+        <label class="form-label">Technologies (comma separated)</label>
+        <input type="text" id="proj-technologies" class="form-input" placeholder="Python, Scapy, ..." />
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div><label class="form-label">GitHub URL</label><input type="url" id="proj-github" class="form-input" placeholder="https://github.com/..." /></div>
+          <div><label class="form-label">Demo URL</label><input type="url" id="proj-demo" class="form-input" placeholder="https://..." /></div>
+        </div>
+        <label class="form-label">Project Image</label>
+        <div id="proj-img-upload-zone" style="position:relative;border:2px dashed var(--border);border-radius:10px;overflow:hidden;transition:all 0.3s;margin-bottom:0;">
+          <input type="file" id="proj-img-file" accept="image/*" style="position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2;" onchange="handleProjectImageUpload(event)" />
+          <!-- Preview -->
+          <div id="proj-img-preview-wrap" style="display:none;position:relative;">
+            <img id="proj-img-preview" src="" alt="Project image preview" style="width:100%;height:150px;object-fit:cover;display:block;" />
+            <div id="proj-img-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;transition:opacity 0.3s;pointer-events:none;">
+              <i class="fas fa-camera" style="color:#fff;font-size:22px;"></i>
+              <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#e2e8f0;letter-spacing:1px;">CHANGE IMAGE</span>
+            </div>
+          </div>
+          <!-- Placeholder -->
+          <div id="proj-img-placeholder" style="padding:24px;text-align:center;">
+            <i class="fas fa-image" style="font-size:28px;color:rgba(0,212,255,0.35);margin-bottom:8px;display:block;"></i>
+            <p style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#475569;margin-bottom:3px;">Click or drag to upload image</p>
+            <p style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#334155;">JPG &middot; PNG &middot; WebP &middot; Max 5MB &middot; Stored in Supabase</p>
+          </div>
+          <!-- Upload progress -->
+          <div id="proj-img-progress" style="display:none;padding:20px;text-align:center;">
+            <div class="loader-spinner" style="width:24px;height:24px;border-width:2px;margin:0 auto 8px;"></div>
+            <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--cyan);">UPLOADING TO STORAGE...</span>
+          </div>
+        </div>
+        <input type="url" id="proj-image" class="form-input" placeholder="Or paste image URL directly" style="margin-top:8px;" oninput="syncProjImagePreview(this.value)" />
+        <div class="flex-gap" style="margin-top:8px;gap:12px;justify-content:flex-end;">
+          <button type="button" class="btn-outline btn-sm" onclick="closeProjectModal()">Cancel</button>
+          <button type="submit" class="btn-primary btn-sm" id="save-proj-btn"><span>Save Project</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Skill Modal -->
+  <div class="modal-overlay" id="skill-modal" role="dialog" aria-modal="true" aria-label="Skill form">
+    <div class="modal-box" style="max-width:450px;">
+      <div class="flex-between mb-6">
+        <h2 class="modal-title" id="skill-modal-title">Add Skill</h2>
+        <button onclick="closeSkillModal()" style="background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="skill-form" onsubmit="handleSkillSave(event)">
+        <input type="hidden" id="skill-id" />
+        <label class="form-label">Skill Name *</label>
+        <input type="text" id="skill-name" class="form-input" placeholder="e.g. FortiGate" required />
+        <label class="form-label">Category *</label>
+        <select id="skill-category" class="form-input" required>
+          <option value="">Select category</option>
+          <option value="Cybersecurity">Cybersecurity</option><option value="Networking">Networking</option>
+          <option value="Web Development">Web Development</option><option value="System Administration">System Administration</option>
+        </select>
+        <label class="form-label">Proficiency (%) *</label>
+        <input type="number" id="skill-percentage" class="form-input" min="1" max="100" placeholder="85" required />
+        <label class="form-label">Icon (Font Awesome class)</label>
+        <input type="text" id="skill-icon" class="form-input" placeholder="fas fa-shield-halved" />
+        <div class="flex-gap" style="margin-top:8px;gap:12px;justify-content:flex-end;">
+          <button type="button" class="btn-outline btn-sm" onclick="closeSkillModal()">Cancel</button>
+          <button type="submit" class="btn-primary btn-sm" id="save-skill-btn"><span>Save Skill</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirm Modal -->
+  <div class="modal-overlay" id="confirm-modal" role="alertdialog" aria-modal="true" aria-label="Confirm delete">
+    <div class="modal-box" style="max-width:380px;text-align:center;">
+      <div style="width:56px;height:56px;background:rgba(244,63,94,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:24px;">
+        <i class="fas fa-trash" style="color:var(--pink);"></i>
+      </div>
+      <h2 class="font-orbit" style="font-size:18px;color:#fff;margin-bottom:10px;">Confirm Delete</h2>
+      <p class="text-muted text-sm mb-6" id="confirm-message">This action cannot be undone.</p>
+      <div class="flex-gap" style="justify-content:center;gap:12px;">
+        <button class="btn-outline btn-sm" onclick="closeConfirmModal()">Cancel</button>
+        <button class="btn-danger btn-sm" id="confirm-action-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+  <script>
+  'use strict';
+
+  /* ══════════════════════════════════════════════════
+     SUPABASE CLIENT
+  ══════════════════════════════════════════════════ */
+  const SUPABASE_URL = 'https://dnsgpjepcavqnnddsbzm.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRuc2dwamVwY2F2cW5uZGRzYnptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MDMyNTcsImV4cCI6MjA5NTM3OTI1N30.UbjtH1myWZmKDbbvO2J-FPUhL1HznvUcEQPi3rN2jRE';
+
+  const { createClient } = window.supabase;
+  const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+  });
+
+  /* ══════════════════════════════════════════════════
+     STATE
+  ══════════════════════════════════════════════════ */
+  let appData = { profile: null, skills: [], projects: [], allSkills: [], allProjects: [] };
+  let currentFilter = { skills: 'all', projects: 'all' };
+  let pendingDeleteFn = null;
+  let resetEmail = '';
+
+  /* ══════════════════════════════════════════════════
+     PARTICLES
+  ══════════════════════════════════════════════════ */
+  (function initParticles() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5;
+        this.r = Math.random() * 2 + 0.5; this.alpha = Math.random() * 0.5 + 0.1;
+        this.color = ['#00d4ff','#0066ff','#7c3aed','#00ff88'][Math.floor(Math.random()*4)];
+      }
+      update() {
+        this.x += this.vx; this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+        ctx.fillStyle = this.color; ctx.globalAlpha = this.alpha; ctx.fill(); ctx.globalAlpha = 1;
+      }
+    }
+
+    function init() {
+      resize();
+      const count = Math.min(80, Math.floor(canvas.width * canvas.height / 15000));
+      particles = Array.from({ length: count }, () => new Particle());
+    }
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = '#00d4ff'; ctx.globalAlpha = (1 - dist/120) * 0.12; ctx.lineWidth = 0.5; ctx.stroke(); ctx.globalAlpha = 1;
+          }
+        }
+      }
+    }
+    function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); drawConnections(); requestAnimationFrame(animate); }
+    window.addEventListener('resize', init); init(); animate();
+  })();
+
+  /* ══════════════════════════════════════════════════
+     TYPING ANIMATION
+  ══════════════════════════════════════════════════ */
+  (function initTyping() {
+    const phrasesData = {
+      en: ['Cybersecurity Enthusiast','Network Security Learner','Web Developer','FortiGate & MikroTik Enthusiast','Ethical Hacker in Training'],
+      km: ['អ្នកចូលចិត្តសន្តិសុខ','កំពុងរៀនសន្តិសុខបណ្តាញ','វិស្វករម្មWeb','FortiGate & MikroTik','ហ័ក្កែរក្រម់សីលធម៌']
+    };
+    let idx = 0, charIdx = 0, deleting = false;
+    const el = document.getElementById('typed-text');
+    let phrases = phrasesData.en;
+    function getphrases() { return phrasesData[typeof currentLang!=='undefined'?currentLang:'en']||phrasesData.en; }
+    function type() {
+      phrases = getphrases();
+      if (idx >= phrases.length) idx = 0;
+      const phrase = phrases[idx];
+      if (!deleting) { el.textContent = phrase.substring(0, charIdx + 1); charIdx++; if (charIdx === phrase.length) { deleting = true; setTimeout(type, 1800); return; } }
+      else { el.textContent = phrase.substring(0, charIdx - 1); charIdx--; if (charIdx === 0) { deleting = false; idx = (idx + 1) % phrases.length; setTimeout(type, 300); return; } }
+      setTimeout(type, deleting ? 40 : 60);
+    }
+    setTimeout(type, 1000);
+  })();
+
+  /* ══════════════════════════════════════════════════
+     SCROLL EFFECTS & INTERSECTION OBSERVER
+  ══════════════════════════════════════════════════ */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+    const sections = ['hero','about','skills','experience','projects','contact'];
+    sections.forEach(id => {
+      const el = document.getElementById(id); if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const link = document.querySelector(`.nav-link[data-section="${id}"]`);
+      if (link) link.classList.toggle('active', rect.top <= 100 && rect.bottom > 100);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => { bar.style.width = bar.dataset.width || '0%'; });
+        entry.target.querySelectorAll('.counter').forEach(el => animateCounter(el));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  function observeAnimated() {
+    document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right').forEach(el => observer.observe(el));
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target); let count = 0;
+    const step = Math.ceil(target / 30);
+    const interval = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = count + (target > 10 ? '+' : '');
+      if (count >= target) clearInterval(interval);
+    }, 40);
+  }
+
+  /* ══════════════════════════════════════════════════
+     SECURITY UTILITY
+  ══════════════════════════════════════════════════ */
+  function escHtml(str) {
+    if (str == null) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  }
+
+  /* ══════════════════════════════════════════════════
+     TOAST
+  ══════════════════════════════════════════════════ */
+  function showToast(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const icons = { success: 'fas fa-check-circle', error: 'fas fa-exclamation-circle', info: 'fas fa-info-circle' };
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `<i class="${icons[type]}"></i>${escHtml(message)}`;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3200);
+  }
+
+  /* ══════════════════════════════════════════════════
+     DATA LOADING FROM SUPABASE
+  ══════════════════════════════════════════════════ */
+  async function loadPublicData() {
+    try {
+      const [profileRes, skillsRes, projectsRes] = await Promise.all([
+        sb.from('profiles').select('*').limit(1).single(),
+        sb.from('skills').select('*').order('category'),
+        sb.from('projects').select('*').order('created_at', { ascending: false })
+      ]);
+
+      if (profileRes.data) { appData.profile = profileRes.data; renderAbout(); }
+      if (skillsRes.data) { appData.allSkills = skillsRes.data; appData.skills = skillsRes.data; renderSkills(); }
+      if (projectsRes.data) { appData.allProjects = projectsRes.data; appData.projects = projectsRes.data; renderProjects(); }
+
+      renderTimeline();
+    } catch (err) {
+      console.error('Error loading data:', err);
+    }
+  }
+
+  /* ══════════════════════════════════════════════════
+     RENDER: ABOUT
+  ══════════════════════════════════════════════════ */
+  function renderAbout() {
+    const p = appData.profile;
+    if (!p) return;
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || ''; };
+    set('about-name', p.full_name);
+    set('about-title', p.title);
+    set('about-bio', p.biography);
+
+    if (p.photo_url) {
+      document.getElementById('about-photo').src = p.photo_url;
+      const prev = document.getElementById('admin-profile-preview');
+      if (prev) prev.src = p.photo_url;
+    }
+
+    // CV buttons
+    const viewBtn = document.getElementById('hero-view-cv-btn');
+    const dlBtn = document.getElementById('hero-download-cv-btn');
+    if (p.cv_url) {
+      if (viewBtn) { viewBtn.href = p.cv_url; viewBtn.classList.remove('hidden'); }
+      if (dlBtn) { dlBtn.href = p.cv_url; dlBtn.classList.remove('hidden'); }
+    } else {
+      if (viewBtn) viewBtn.classList.add('hidden');
+      if (dlBtn) dlBtn.classList.add('hidden');
+    }
+    renderAdminCvSection(p.cv_url);
+
+    // Contact cards
+    if (p.telegram) {
+      const t = p.telegram.replace('@','');
+      const ccT = document.getElementById('cc-telegram'); if (ccT) ccT.href = 'https://t.me/' + t;
+      const ccTV = document.getElementById('cc-telegram-val'); if (ccTV) ccTV.textContent = p.telegram;
+      const fT = document.getElementById('footer-telegram'); if (fT) fT.href = 'https://t.me/' + t;
+    }
+    if (p.github) {
+      const ccG = document.getElementById('cc-github'); if (ccG) ccG.href = p.github;
+      const ccGV = document.getElementById('cc-github-val'); if (ccGV) ccGV.textContent = p.github.replace('https://','');
+      const fG = document.getElementById('footer-github'); if (fG) fG.href = p.github;
+    }
+    if (p.linkedin) {
+      const ccL = document.getElementById('cc-linkedin'); if (ccL) ccL.href = p.linkedin;
+      const ccLV = document.getElementById('cc-linkedin-val'); if (ccLV) ccLV.textContent = p.linkedin.replace('https://','');
+      const fL = document.getElementById('footer-linkedin'); if (fL) fL.href = p.linkedin;
+    }
+    if (p.email) {
+      const ccE = document.getElementById('cc-email'); if (ccE) ccE.href = 'mailto:' + p.email;
+      const ccEV = document.getElementById('cc-email-val'); if (ccEV) ccEV.textContent = p.email;
+      const fE = document.getElementById('footer-email'); if (fE) fE.href = 'mailto:' + p.email;
+    }
+  }
+
+  /* ══════════════════════════════════════════════════
+     RENDER: SKILLS
+  ══════════════════════════════════════════════════ */
+  function renderSkills(filter) {
+    if (filter !== undefined) currentFilter.skills = filter;
+    const skills = currentFilter.skills === 'all'
+      ? appData.allSkills
+      : appData.allSkills.filter(s => s.category === currentFilter.skills);
+    const grid = document.getElementById('skills-grid');
+    if (!grid) return;
+    if (!skills.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#475569;padding:40px;font-family:\'Share Tech Mono\',monospace;">No skills found.</div>'; return; }
+    const colors = { 'Cybersecurity': 'linear-gradient(90deg,#f43f5e,#7c3aed)', 'Networking': 'linear-gradient(90deg,#0066ff,#00d4ff)', 'Web Development': 'linear-gradient(90deg,#00d4ff,#00ff88)', 'System Administration': 'linear-gradient(90deg,#7c3aed,#0066ff)' };
+    grid.innerHTML = skills.map((s, i) => {
+      const color = colors[s.category] || 'linear-gradient(90deg,var(--cyan),var(--blue))';
+      return `<div class="skill-card anim-fade-up" style="transition-delay:${i*0.07}s;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;background:rgba(0,212,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;">
+            <i class="${s.icon || 'fas fa-code'}" style="color:var(--cyan);"></i>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">${escHtml(s.skill_name)}</div>
+            <div style="font-size:11px;font-family:'Share Tech Mono',monospace;color:#475569;">${escHtml(s.category)}</div>
+          </div>
+          <div style="font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;color:var(--cyan);">${s.percentage}%</div>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="background:${color};" data-width="${s.percentage}%"></div></div>
+      </div>`;
+    }).join('');
+    document.querySelectorAll('#skills-grid .anim-fade-up').forEach(el => { el.classList.remove('visible'); observer.observe(el); });
+  }
+
+  function filterSkills(btn, cat) {
+    document.querySelectorAll('#skill-filter .cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderSkills(cat);
+  }
+
+  /* ══════════════════════════════════════════════════
+     RENDER: PROJECTS
+  ══════════════════════════════════════════════════ */
+  function renderProjects(filter) {
+    if (filter !== undefined) currentFilter.projects = filter;
+    const projects = currentFilter.projects === 'all'
+      ? appData.allProjects
+      : appData.allProjects.filter(p => p.category === currentFilter.projects);
+    const grid = document.getElementById('projects-grid');
+    if (!grid) return;
+    if (!projects.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#475569;padding:40px;font-family:\'Share Tech Mono\',monospace;">No projects found.</div>'; return; }
+    grid.innerHTML = projects.map((p, i) => {
+      const techs = (p.technologies || '').split(',').slice(0,4).map(t => `<span class="tech-tag">${escHtml(t.trim())}</span>`).join('');
+      return `<div class="project-card anim-fade-up" style="transition-delay:${i*0.1}s;">
+        <div class="project-img-wrap">
+          <img src="${escHtml(p.image_url || 'https://picsum.photos/seed/' + p.id + '/600/300.webp')}"
+            alt="${escHtml(p.title)} project screenshot" class="project-img" loading="lazy" />
+          <div class="project-overlay"></div>
+          <span class="project-category">${escHtml(p.category || 'Project')}</span>
+        </div>
+        <div class="project-body">
+          <div class="project-title">${escHtml(p.title)}</div>
+          <p style="font-size:13px;color:#64748b;margin-bottom:14px;line-height:1.7;">${escHtml((p.description||'').substring(0,120))}...</p>
+          <div style="margin-bottom:16px;display:flex;flex-wrap:wrap;">${techs}</div>
+          <div style="display:flex;gap:8px;">
+            ${p.github_url ? `<a href="${escHtml(p.github_url)}" target="_blank" rel="noopener" class="btn-outline btn-sm" style="text-decoration:none;"><i class="fab fa-github" style="margin-right:6px;"></i>Code</a>` : ''}
+            ${p.demo_url ? `<a href="${escHtml(p.demo_url)}" target="_blank" rel="noopener" class="btn-primary btn-sm" style="text-decoration:none;"><span><i class="fas fa-external-link-alt" style="margin-right:6px;"></i>Demo</span></a>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    document.querySelectorAll('#projects-grid .anim-fade-up').forEach(el => { el.classList.remove('visible'); observer.observe(el); });
+  }
+
+  function filterProjects(btn, cat) {
+    document.querySelectorAll('#project-filter .cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(cat);
+  }
+
+  /* ══════════════════════════════════════════════════
+     RENDER: TIMELINE (static)
+  ══════════════════════════════════════════════════ */
+  function renderTimeline() {
+    const timelineData = {
+      en: [
+        { year: '2025', title: 'Security Research & Pen Testing', subtitle: 'Self-Study & Labs', desc: 'Actively learning ethical hacking, CTF challenges, and building security labs with FortiGate and Kali Linux.', type: 'achievement' },
+        { year: '2024', title: 'Network Security Internship', subtitle: 'IT Department', desc: 'Configured FortiGate firewalls, managed MikroTik routers, monitored network traffic, and improved security posture.', type: 'work' },
+        { year: '2024', title: 'FortiGate NSE 1 & 2 Certified', subtitle: 'Fortinet Network Security', desc: 'Earned Fortinet Network Security certifications covering cybersecurity concepts and FortiGate fundamentals.', type: 'cert' },
+        { year: '2023', title: 'Bachelor of Computer Science', subtitle: 'University – Cybersecurity Major', desc: 'Pursuing Computer Science with focus on network security, cryptography, and system administration.', type: 'edu' },
+        { year: '2023', title: 'MikroTik MTCNA Prep', subtitle: 'MikroTik Academy', desc: 'Completed hands-on training for MikroTik router configuration, OSPF, BGP, and wireless security.', type: 'cert' },
+        { year: '2022', title: 'Web Development Projects', subtitle: 'Personal & Freelance', desc: 'Built PHP/MySQL web applications, e-commerce sites, and inventory management systems.', type: 'work' },
+      ],
+      km: [
+        { year: '2025', title: 'ការស្រាវជ្រាវ Security & Pen Testing', subtitle: 'ការសិក្សាដោយខ្លួនឯង', desc: 'រៀន ethical hacking, CTF challenges, និងការសាងសង់ security labs ជាមួយ FortiGate និង Kali Linux.', type: 'achievement' },
+        { year: '2024', title: 'កម្មសិក្សា Network Security', subtitle: 'នាយកដ្ឋាន IT', desc: 'កំណត់រចនាសម្ព័ន្ធ FortiGate, គ្រប់គ្រង MikroTik router, ត្រួតពិនិត្យ traffic.', type: 'work' },
+        { year: '2024', title: 'FortiGate NSE 1 & 2', subtitle: 'Fortinet Network Security', desc: 'ទទួលបាន Fortinet certifications ស្ត឵បិ cybersecurity និង FortiGate fundamentals.', type: 'cert' },
+        { year: '2023', title: 'បរិញ្ញាបត្រ Computer Science', subtitle: 'សាកលវិទ្យាល័យ – ឯកទេសសន្តិសុខ', desc: 'កំពុងសិក្សា Computer Science នា network security, cryptography.', type: 'edu' },
+        { year: '2023', title: 'MikroTik MTCNA', subtitle: 'MikroTik Academy', desc: 'បញ្ចប់ការហ្វឹកហ្វឺន MikroTik router, OSPF, BGP.', type: 'cert' },
+        { year: '2022', title: 'គម្រោង Web Development', subtitle: 'ផ្ទាល់ខ្លួន & Freelance', desc: 'បង្កើត web app PHP/MySQL, e-commerce.', type: 'work' },
+      ]
+    };
+    const timeline = timelineData[typeof currentLang!=='undefined'?currentLang:'en'] || timelineData.en;
+    const list = document.getElementById('timeline-list');
+    if (!list) return;
+    const typeColors = { achievement: 'var(--cyan)', work: 'var(--blue)', cert: 'var(--purple)', edu: 'var(--green)' };
+    const typeIcons = { achievement: 'fas fa-trophy', work: 'fas fa-briefcase', cert: 'fas fa-certificate', edu: 'fas fa-graduation-cap' };
+    list.innerHTML = timeline.map((item, i) => `
+      <div class="timeline-item anim-fade-up" style="transition-delay:${i*0.1}s;">
+        <div class="timeline-dot" style="border-color:${typeColors[item.type]||'var(--cyan)'};" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <div style="background:rgba(0,212,255,0.08);border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;">
+              <i class="${typeIcons[item.type]||'fas fa-star'}" style="color:${typeColors[item.type]||'var(--cyan)'};font-size:14px;"></i>
+            </div>
+            <div>
+              <div style="font-family:'Orbitron',sans-serif;font-size:14px;font-weight:600;color:#fff;">${escHtml(item.title)}</div>
+              <div style="font-size:12px;color:#475569;font-family:'Share Tech Mono',monospace;">${escHtml(item.subtitle)}</div>
+            </div>
+            <span class="badge badge-cyan" style="margin-left:auto;">${escHtml(item.year)}</span>
+          </div>
+          <p style="font-size:13px;color:#64748b;line-height:1.7;">${escHtml(item.desc)}</p>
+        </div>
+      </div>`).join('');
+    document.querySelectorAll('#timeline-list .anim-fade-up').forEach(el => { el.classList.remove('visible'); observer.observe(el); });
+  }
+
+  /* ══════════════════════════════════════════════════
+     NAVBAR / MOBILE
+  ══════════════════════════════════════════════════ */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') hamburger.click(); });
+  function closeMobileMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').substring(1);
+      if (id === 'admin') return;
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  /* ══════════════════════════════════════════════════
+     CONTACT FORM → TELEGRAM
+  ══════════════════════════════════════════════════ */
+  async function handleContactSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const name    = form.name.value.trim();
+    const email   = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    btn.disabled = true;
+    btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>SENDING...</span>';
+
+    try {
+      const { data, error } = await sb.functions.invoke('send-telegram', {
+        body: { name, email, message }
+      });
+
+      if (error) {
+        // Try to get detailed error
+        let errMsg = error.message || 'Failed to send message.';
+        try {
+          if (error.context) {
+            const text = await error.context.text();
+            errMsg = text || errMsg;
+          }
+        } catch {}
+        throw new Error(errMsg);
+      }
+
+      showToast('Message sent! I\'ll get back to you soon.', 'success');
+      form.reset();
+    } catch (err) {
+      console.error('Contact form error:', err);
+      showToast('Failed to send: ' + (err.message || 'Unknown error'), 'error');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<span><i class="fas fa-shield-halved" style="margin-right:8px;"></i>SEND MESSAGE</span>';
+    }
+  }
+
+  /* ══════════════════════════════════════════════════
+     ADMIN — ROUTING
+  ══════════════════════════════════════════════════ */
+  function showAdmin(e) {
+    if (e) e.preventDefault();
+    document.getElementById('public-site').style.display = 'none';
+    const adm = document.getElementById('admin-section');
+    adm.style.display = 'flex'; adm.classList.add('active');
+  }
+  function exitAdmin() {
+    document.getElementById('admin-section').style.display = 'none';
+    document.getElementById('admin-section').classList.remove('active');
+    document.getElementById('public-site').style.display = 'block';
+  }
+  function viewPortfolio() { exitAdmin(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  /* ══════════════════════════════════════════════════
+     ADMIN — AUTH (SUPABASE)
+  ══════════════════════════════════════════════════ */
+  function showLoginView() {
+    document.getElementById('login-view').classList.remove('hidden');
+    document.getElementById('forgot-view').classList.add('hidden');
+    document.getElementById('otp-view').classList.add('hidden');
+    document.getElementById('login-error').classList.add('hidden');
+  }
+  function showForgotView() {
+    document.getElementById('login-view').classList.add('hidden');
+    document.getElementById('forgot-view').classList.remove('hidden');
+    document.getElementById('otp-view').classList.add('hidden');
+    document.getElementById('login-error').classList.add('hidden');
+  }
+  function showOtpView() {
+    document.getElementById('forgot-view').classList.add('hidden');
+    document.getElementById('otp-view').classList.remove('hidden');
+  }
+
+  function setLoginError(msg) {
+    const el = document.getElementById('login-error');
+    el.textContent = msg; el.classList.remove('hidden');
+  }
+
+  async function handleAdminLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const btn = document.getElementById('login-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Authenticating...</span>';
+    document.getElementById('login-error').classList.add('hidden');
+
+    const { data, error } = await sb.auth.signInWithPassword({ email, password });
+    btn.disabled = false;
+    btn.innerHTML = '<span><i class="fas fa-right-to-bracket" style="margin-right:8px;"></i>ACCESS DASHBOARD</span>';
+
+    if (error) {
+      setLoginError(error.message || 'Invalid email or password.');
+      document.getElementById('login-form').style.animation = 'glitchX 0.3s ease';
+      setTimeout(() => document.getElementById('login-form').style.animation = '', 300);
+    } else {
+      showDashboard(data.user);
+    }
+  }
+
+  async function handleForgotPassword(e) {
+    e.preventDefault();
+    const email = document.getElementById('forgot-email').value.trim();
+    const btn = document.getElementById('forgot-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Sending...</span>';
+    resetEmail = email;
+
+    const { error } = await sb.auth.resetPasswordForEmail(email);
+    btn.disabled = false;
+    btn.innerHTML = '<span><i class="fas fa-paper-plane" style="margin-right:8px;"></i>SEND OTP</span>';
+
+    if (error) { setLoginError(error.message); }
+    else { showToast('OTP sent to ' + email, 'success'); showOtpView(); }
+  }
+
+  async function handleOtpVerify(e) {
+    e.preventDefault();
+    const token = document.getElementById('otp-code').value.trim();
+    const password = document.getElementById('new-password').value;
+    const btn = document.getElementById('otp-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Verifying...</span>';
+
+    const { error: verifyErr } = await sb.auth.verifyOtp({ email: resetEmail, token, type: 'recovery' });
+    if (verifyErr) {
+      btn.disabled = false; btn.innerHTML = '<span><i class="fas fa-key" style="margin-right:8px;"></i>RESET PASSWORD</span>';
+      setLoginError(verifyErr.message); return;
+    }
+
+    const { error: updateErr } = await sb.auth.updateUser({ password });
+    btn.disabled = false; btn.innerHTML = '<span><i class="fas fa-key" style="margin-right:8px;"></i>RESET PASSWORD</span>';
+
+    if (updateErr) { setLoginError(updateErr.message); }
+    else { showToast('Password reset successful! Please log in.', 'success'); showLoginView(); }
+  }
+
+  async function handleAdminLogout() {
+    await sb.auth.signOut();
+    document.getElementById('admin-login').style.display = 'flex';
+    const dash = document.getElementById('admin-dashboard');
+    dash.classList.add('hidden'); dash.style.display = 'none';
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-password').value = '';
+    showLoginView();
+    showToast('Logged out successfully.', 'info');
+  }
+
+  function togglePasswordVisibility() {
+    const inp = document.getElementById('login-password');
+    const icon = document.getElementById('pwd-toggle');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+    icon.className = inp.type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+    icon.style.cssText = 'position:absolute;right:14px;top:36px;color:#475569;cursor:pointer;font-size:14px;';
+  }
+
+  function showDashboard(user) {
+    document.getElementById('admin-login').style.display = 'none';
+    const dash = document.getElementById('admin-dashboard');
+    dash.classList.remove('hidden'); dash.style.display = 'flex';
+    if (user) {
+      const emailEl = document.getElementById('admin-user-email');
+      if (emailEl) emailEl.textContent = user.email;
+    }
+    refreshAdminData();
+  }
+
+  /* ══════════════════════════════════════════════════
+     ADMIN — DASHBOARD DATA REFRESH
+  ══════════════════════════════════════════════════ */
+  async function refreshAdminData() {
+    try {
+      const [profileRes, skillsRes, projectsRes] = await Promise.all([
+        sb.from('profiles').select('*').limit(1).single(),
+        sb.from('skills').select('*').order('category'),
+        sb.from('projects').select('*').order('created_at', { ascending: false })
+      ]);
+
+      const profile = profileRes.data;
+      const skills = skillsRes.data || [];
+      const projects = projectsRes.data || [];
+
+      // Update public data too
+      if (profile) { appData.profile = profile; renderAbout(); }
+      appData.allSkills = skills; appData.skills = skills; renderSkills();
+      appData.allProjects = projects; appData.projects = projects; renderProjects();
+
+      // Stats
+      document.getElementById('stat-projects').textContent = projects.length;
+      document.getElementById('stat-skills').textContent = skills.length;
+
+      // Count media files
+      try {
+        const { data: mediaFiles } = await sb.storage.from('media-library').list('', { limit: 100 });
+        document.getElementById('stat-media').textContent = mediaFiles ? mediaFiles.filter(f => f.name !== '.emptyFolderPlaceholder').length : 0;
+      } catch { document.getElementById('stat-media').textContent = '—'; }
+
+      // Profile form
+      if (profile) {
+        document.getElementById('profile-name').value = profile.full_name || '';
+        document.getElementById('profile-title').value = profile.title || '';
+        document.getElementById('profile-bio').value = profile.biography || '';
+        document.getElementById('profile-email').value = profile.email || '';
+        document.getElementById('profile-telegram').value = profile.telegram || '';
+        document.getElementById('profile-github').value = profile.github || '';
+        document.getElementById('profile-linkedin').value = profile.linkedin || '';
+        if (profile.photo_url) document.getElementById('admin-profile-preview').src = profile.photo_url;
+      }
+
+      // Recent projects table
+      const tbody = document.getElementById('recent-projects-body');
+      if (tbody) {
+        tbody.innerHTML = projects.slice(0,5).map(p => `<tr>
+          <td style="color:#fff;font-weight:500;">${escHtml(p.title)}</td>
+          <td><span class="badge badge-cyan">${escHtml(p.category||'')}</span></td>
+          <td><span class="badge badge-green">Published</span></td>
+          <td style="color:var(--text-muted);">${escHtml((p.created_at||'').split('T')[0])}</td>
+        </tr>`).join('') || '<tr><td colspan="4" style="text-align:center;color:#475569;padding:24px;">No projects yet</td></tr>';
+      }
+
+      renderAdminProjects(projects);
+      renderAdminSkills(skills);
+      renderAdminMedia();
+    } catch (err) { console.error('Refresh error:', err); showToast('Error loading data: ' + err.message, 'error'); }
+  }
+
+  /* ══════════════════════════════════════════════════
+     ADMIN — TABLES
+  ══════════════════════════════════════════════════ */
+  function renderAdminProjects(projects) {
+    const list = projects || appData.allProjects;
+    const tbody = document.getElementById('admin-projects-body');
+    if (!tbody) return;
+    tbody.innerHTML = list.map(p => `<tr>
+      <td><img src="${escHtml(p.image_url||'https://picsum.photos/seed/'+p.id+'/60/40.webp')}"
+        alt="${escHtml(p.title)} thumbnail" style="width:60px;height:40px;object-fit:cover;border-radius:6px;border:1px solid var(--border);" loading="lazy" /></td>
+      <td style="color:#fff;font-weight:500;">${escHtml(p.title)}</td>
+      <td><span class="badge badge-cyan">${escHtml(p.category||'')}</span></td>
+      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(p.technologies||'')}</td>
+      <td style="color:var(--text-muted);">${escHtml((p.created_at||'').split('T')[0])}</td>
+      <td><div style="display:flex;gap:8px;">
+        <button class="btn-outline btn-sm" onclick="openProjectModal('${escHtml(p.id)}')"><i class="fas fa-edit"></i></button>
+        <button class="btn-danger btn-sm" onclick="deleteItem('project','${escHtml(p.id)}')"><i class="fas fa-trash"></i></button>
+      </div></td>
+    </tr>`).join('') || '<tr><td colspan="6" style="text-align:center;color:#475569;padding:24px;">No projects yet.</td></tr>';
+  }
+
+  function renderAdminSkills(skills) {
+    const list = skills || appData.allSkills;
+    const tbody = document.getElementById('admin-skills-body');
+    if (!tbody) return;
+    tbody.innerHTML = list.map(s => `<tr>
+      <td style="color:#fff;font-weight:500;"><div style="display:flex;align-items:center;gap:10px;">
+        <i class="${s.icon||'fas fa-code'}" style="color:var(--cyan);width:16px;"></i>${escHtml(s.skill_name)}
+      </div></td>
+      <td><span class="badge badge-purple">${escHtml(s.category||'')}</span></td>
+      <td style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-weight:600;">${s.percentage}%</td>
+      <td style="width:150px;"><div style="background:rgba(255,255,255,0.06);height:4px;border-radius:2px;overflow:hidden;">
+        <div style="height:100%;width:${s.percentage}%;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:2px;"></div>
+      </div></td>
+      <td><div style="display:flex;gap:8px;">
+        <button class="btn-outline btn-sm" onclick="openSkillModal('${escHtml(s.id)}')"><i class="fas fa-edit"></i></button>
+        <button class="btn-danger btn-sm" onclick="deleteItem('skill','${escHtml(s.id)}')"><i class="fas fa-trash"></i></button>
+      </div></td>
+    </tr>`).join('') || '<tr><td colspan="5" style="text-align:center;color:#475569;padding:24px;">No skills yet.</td></tr>';
+  }
+
+  async function renderAdminMedia() {
+    const grid = document.getElementById('media-grid');
+    if (!grid) return;
+    try {
+      const { data: files, error } = await sb.storage.from('media-library').list('', { limit: 100, sortBy: { column: 'created_at', order: 'desc' } });
+      if (error || !files) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#475569;padding:40px;font-family:\'Share Tech Mono\',monospace;">No media files yet.</div>'; return; }
+      const mediaFiles = files.filter(f => f.name !== '.emptyFolderPlaceholder');
+      if (!mediaFiles.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#475569;padding:40px;font-family:\'Share Tech Mono\',monospace;">No media files yet. Upload some!</div>'; return; }
+      grid.innerHTML = mediaFiles.map(f => {
+        const url = sb.storage.from('media-library').getPublicUrl(f.name).data.publicUrl;
+        return `<div style="position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border);aspect-ratio:1;background:rgba(10,20,40,0.5);">
+          <img src="${escHtml(url)}" alt="${escHtml(f.name)}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;gap:8px;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <button class="btn-outline btn-sm" onclick="copyToClipboard('${escHtml(url)}')" title="Copy URL"><i class="fas fa-copy"></i></button>
+            <button class="btn-danger btn-sm" onclick="deleteMedia('${escHtml(f.name)}')"><i class="fas fa-trash"></i></button>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.8));padding:8px;font-size:10px;font-family:'Share Tech Mono',monospace;color:#94a3b8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(f.name)}</div>
+        </div>`;
+      }).join('');
+    } catch (err) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--pink);padding:40px;font-family:\'Share Tech Mono\',monospace;">Error loading media: ' + escHtml(err.message) + '</div>'; }
+  }
+
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => showToast(typeof t==='function'?t('toast.url.copied'):'URL copied to clipboard!', 'success')).catch(() => showToast('Could not copy URL.', 'error'));
+  }
+
+  /* ══════════════════════════════════════════════════
+     PROFILE SAVE
+  ══════════════════════════════════════════════════ */
+  async function handleProfileSave(e) {
+    e.preventDefault();
+    const btn = document.getElementById('save-profile-btn');
+    btn.disabled = true; btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Saving...</span>';
+
+    const currentProfile = appData.profile;
+    const payload = {
+      full_name: document.getElementById('profile-name').value,
+      title: document.getElementById('profile-title').value,
+      biography: document.getElementById('profile-bio').value,
+      email: document.getElementById('profile-email').value,
+      telegram: document.getElementById('profile-telegram').value,
+      github: document.getElementById('profile-github').value,
+      linkedin: document.getElementById('profile-linkedin').value,
+      updated_at: new Date().toISOString(),
+      ...(currentProfile?.photo_url ? { photo_url: currentProfile.photo_url } : {})
+    };
+
+    let res;
+    if (currentProfile?.id) {
+      res = await sb.from('profiles').update(payload).eq('id', currentProfile.id);
+    } else {
+      res = await sb.from('profiles').insert(payload);
+    }
+
+    btn.disabled = false; btn.innerHTML = '<span><i class="fas fa-save" style="margin-right:8px;"></i>SAVE PROFILE</span>';
+
+    if (res.error) { showToast('Error: ' + res.error.message, 'error'); }
+    else { showToast('Profile saved successfully!', 'success'); await refreshAdminData(); }
+  }
+
+  /* ══════════════════════════════════════════════════
+     PHOTO UPLOAD → SUPABASE STORAGE
+  ══════════════════════════════════════════════════ */
+  async function handlePhotoUpload(e) {
+    const file = e.target.files[0]; if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { showToast('File too large. Max 5MB.', 'error'); return; }
+
+    const progress = document.getElementById('photo-upload-progress');
+    if (progress) progress.classList.remove('hidden');
+
+    const ext = file.name.split('.').pop();
+    const fileName = `profile-${Date.now()}.${ext}`;
+
+    const { data: uploadData, error: uploadErr } = await sb.storage.from('profile-photos').upload(fileName, file, { upsert: true });
+
+    if (uploadErr) {
+      if (progress) progress.classList.add('hidden');
+      showToast('Upload failed: ' + uploadErr.message, 'error'); return;
+    }
+
+    const { data: urlData } = sb.storage.from('profile-photos').getPublicUrl(fileName);
+    const publicUrl = urlData.publicUrl;
+
+    // Update profile
+    const currentProfile = appData.profile;
+    let res;
+    if (currentProfile?.id) {
+      res = await sb.from('profiles').update({ photo_url: publicUrl, updated_at: new Date().toISOString() }).eq('id', currentProfile.id);
+    } else {
+      res = await sb.from('profiles').insert({ photo_url: publicUrl });
+    }
+
+    if (progress) progress.classList.add('hidden');
+    if (res.error) { showToast('Could not save photo URL: ' + res.error.message, 'error'); return; }
+
+    document.getElementById('admin-profile-preview').src = publicUrl;
+    document.getElementById('about-photo').src = publicUrl;
+    if (appData.profile) appData.profile.photo_url = publicUrl;
+    showToast('Profile photo updated!', 'success');
+  }
+
+  /* ══════════════════════════════════════════════════
+     PROJECT CRUD
+  ══════════════════════════════════════════════════ */
+  function openProjectModal(id) {
+    const modal = document.getElementById('project-modal');
+    modal.classList.add('open');
+    document.getElementById('project-id').value = '';
+    document.getElementById('project-modal-title').textContent = 'Add Project';
+    document.getElementById('project-form').reset();
+    setProjImagePreview('');
+    if (id) {
+      const p = appData.allProjects.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('project-modal-title').textContent = 'Edit Project';
+      document.getElementById('project-id').value = p.id;
+      document.getElementById('proj-title').value = p.title || '';
+      document.getElementById('proj-category').value = p.category || '';
+      document.getElementById('proj-description').value = p.description || '';
+      document.getElementById('proj-technologies').value = p.technologies || '';
+      document.getElementById('proj-github').value = p.github_url || '';
+      document.getElementById('proj-demo').value = p.demo_url || '';
+      document.getElementById('proj-image').value = p.image_url || '';
+      setProjImagePreview(p.image_url || '');
+    }
+  }
+  function closeProjectModal() { document.getElementById('project-modal').classList.remove('open'); }
+
+  /* ── Project image preview helpers ── */
+  function setProjImagePreview(url) {
+    const wrap = document.getElementById('proj-img-preview-wrap');
+    const placeholder = document.getElementById('proj-img-placeholder');
+    const img = document.getElementById('proj-img-preview');
+    const progress = document.getElementById('proj-img-progress');
+    if (progress) progress.style.display = 'none';
+    if (url) {
+      img.src = url;
+      wrap.style.display = 'block';
+      placeholder.style.display = 'none';
+    } else {
+      wrap.style.display = 'none';
+      placeholder.style.display = 'block';
+      img.src = '';
+    }
+  }
+  function syncProjImagePreview(url) { setProjImagePreview(url); }
+
+  /* ── Project image upload → project-images bucket ── */
+  async function handleProjectImageUpload(e) {
+    const file = e.target.files[0]; if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { showToast('File too large. Max 5MB.', 'error'); e.target.value = ''; return; }
+
+    // Instant local preview
+    const reader = new FileReader();
+    reader.onload = ev => {
+      document.getElementById('proj-img-preview').src = ev.target.result;
+      document.getElementById('proj-img-preview-wrap').style.display = 'block';
+      document.getElementById('proj-img-placeholder').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+
+    // Show spinner
+    document.getElementById('proj-img-progress').style.display = 'block';
+    document.getElementById('proj-img-preview-wrap').style.display = 'none';
+    document.getElementById('proj-img-placeholder').style.display = 'none';
+    document.getElementById('proj-img-file').disabled = true;
+
+    const ext = file.name.split('.').pop().toLowerCase();
+    const fileName = `project-${Date.now()}-${Math.random().toString(36).substring(2,7)}.${ext}`;
+
+    const { error: upErr } = await sb.storage.from('project-images').upload(fileName, file, { upsert: true });
+
+    document.getElementById('proj-img-progress').style.display = 'none';
+    document.getElementById('proj-img-file').disabled = false;
+    e.target.value = '';
+
+    if (upErr) {
+      setProjImagePreview('');
+      showToast('Upload failed: ' + upErr.message, 'error');
+      return;
+    }
+
+    const { data: urlData } = sb.storage.from('project-images').getPublicUrl(fileName);
+    const publicUrl = urlData.publicUrl;
+    document.getElementById('proj-image').value = publicUrl;
+    setProjImagePreview(publicUrl);
+    showToast('Image uploaded successfully!', 'success');
+  }
+
+  async function handleProjectSave(e) {
+    e.preventDefault();
+    const id = document.getElementById('project-id').value;
+    const btn = document.getElementById('save-proj-btn');
+    btn.disabled = true; btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Saving...</span>';
+
+    const payload = {
+      title: document.getElementById('proj-title').value,
+      category: document.getElementById('proj-category').value,
+      description: document.getElementById('proj-description').value,
+      technologies: document.getElementById('proj-technologies').value,
+      github_url: document.getElementById('proj-github').value || null,
+      demo_url: document.getElementById('proj-demo').value || null,
+      image_url: document.getElementById('proj-image').value || null,
+    };
+
+    let res;
+    if (id) { res = await sb.from('projects').update(payload).eq('id', id); }
+    else { res = await sb.from('projects').insert(payload); }
+
+    btn.disabled = false; btn.innerHTML = '<span>Save Project</span>';
+    if (res.error) { showToast('Error: ' + res.error.message, 'error'); return; }
+
+    closeProjectModal();
+    showToast(id ? 'Project updated!' : 'Project added!', 'success');
+    await refreshAdminData();
+  }
+
+  /* ══════════════════════════════════════════════════
+     SKILL CRUD
+  ══════════════════════════════════════════════════ */
+  function openSkillModal(id) {
+    const modal = document.getElementById('skill-modal');
+    modal.classList.add('open');
+    document.getElementById('skill-id').value = '';
+    document.getElementById('skill-modal-title').textContent = 'Add Skill';
+    document.getElementById('skill-form').reset();
+    if (id) {
+      const s = appData.allSkills.find(x => x.id === id);
+      if (!s) return;
+      document.getElementById('skill-modal-title').textContent = 'Edit Skill';
+      document.getElementById('skill-id').value = s.id;
+      document.getElementById('skill-name').value = s.skill_name || '';
+      document.getElementById('skill-category').value = s.category || '';
+      document.getElementById('skill-percentage').value = s.percentage || '';
+      document.getElementById('skill-icon').value = s.icon || '';
+    }
+  }
+  function closeSkillModal() { document.getElementById('skill-modal').classList.remove('open'); }
+
+  async function handleSkillSave(e) {
+    e.preventDefault();
+    const id = document.getElementById('skill-id').value;
+    const btn = document.getElementById('save-skill-btn');
+    btn.disabled = true; btn.innerHTML = '<span><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Saving...</span>';
+
+    const payload = {
+      skill_name: document.getElementById('skill-name').value,
+      category: document.getElementById('skill-category').value,
+      percentage: parseInt(document.getElementById('skill-percentage').value),
+      icon: document.getElementById('skill-icon').value || 'fas fa-code'
+    };
+
+    let res;
+    if (id) { res = await sb.from('skills').update(payload).eq('id', id); }
+    else { res = await sb.from('skills').insert(payload); }
+
+    btn.disabled = false; btn.innerHTML = '<span>Save Skill</span>';
+    if (res.error) { showToast('Error: ' + res.error.message, 'error'); return; }
+
+    closeSkillModal();
+    showToast(id ? 'Skill updated!' : 'Skill added!', 'success');
+    await refreshAdminData();
+  }
+
+  /* ══════════════════════════════════════════════════
+     DELETE
+  ══════════════════════════════════════════════════ */
+  function deleteItem(type, id) {
+    document.getElementById('confirm-message').textContent = `Delete this ${type}? This cannot be undone.`;
+    document.getElementById('confirm-modal').classList.add('open');
+    document.getElementById('confirm-action-btn').onclick = async () => {
+      const table = type === 'project' ? 'projects' : 'skills';
+      const { error } = await sb.from(table).delete().eq('id', id);
+      if (error) { showToast('Error: ' + error.message, 'error'); closeConfirmModal(); return; }
+      closeConfirmModal();
+      showToast(`${type.charAt(0).toUpperCase()+type.slice(1)} deleted.`, 'success');
+      await refreshAdminData();
+    };
+  }
+  function closeConfirmModal() { document.getElementById('confirm-modal').classList.remove('open'); }
+
+  async function deleteMedia(fileName) {
+    const { error } = await sb.storage.from('media-library').remove([fileName]);
+    if (error) { showToast('Error: ' + error.message, 'error'); return; }
+    showToast('Media file deleted.', 'success');
+    renderAdminMedia();
+    // Update count
+    const statEl = document.getElementById('stat-media');
+    if (statEl) statEl.textContent = Math.max(0, parseInt(statEl.textContent) - 1);
+  }
+
+  /* ══════════════════════════════════════════════════
+     MEDIA UPLOAD → SUPABASE STORAGE
+  ══════════════════════════════════════════════════ */
+  async function handleMediaUpload(e) {
+    const files = Array.from(e.target.files);
+    for (const file of files) {
+      if (file.size > 10 * 1024 * 1024) { showToast(`${file.name} too large. Max 10MB.`, 'error'); continue; }
+      const ext = file.name.split('.').pop();
+      const fileName = `media-${Date.now()}-${Math.random().toString(36).substring(2,8)}.${ext}`;
+      showToast(`Uploading ${file.name}...`, 'info');
+      const { error } = await sb.storage.from('media-library').upload(fileName, file, { upsert: false });
+      if (error) { showToast(`Upload failed: ${error.message}`, 'error'); continue; }
+      showToast(`${file.name} uploaded!`, 'success');
+    }
+    e.target.value = '';
+    renderAdminMedia();
+    // Refresh count
+    try {
+      const { data: mf } = await sb.storage.from('media-library').list('', { limit: 100 });
+      document.getElementById('stat-media').textContent = mf ? mf.filter(f => f.name !== '.emptyFolderPlaceholder').length : 0;
+    } catch {}
+  }
+
+  /* ══════════════════════════════════════════════════
+     SIDEBAR
+  ══════════════════════════════════════════════════ */
+  function switchPage(page) {
+    document.querySelectorAll('.dashboard-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.sidebar-nav-item').forEach(n => n.classList.remove('active'));
+    const pageEl = document.getElementById('page-' + page);
+    if (pageEl) pageEl.classList.add('active');
+    document.querySelector(`.sidebar-nav-item[data-page="${page}"]`)?.classList.add('active');
+    if (window.innerWidth <= 768) toggleSidebar(false);
+  }
+  function toggleSidebar(force) {
+    const sidebar = document.getElementById('admin-sidebar');
+    const state = force !== undefined ? force : !sidebar.classList.contains('open');
+    sidebar.classList.toggle('open', state);
+  }
+
+  /* ══════════════════════════════════════════════════
+     MODAL CLOSE HELPERS
+  ══════════════════════════════════════════════════ */
+  /* ── Drag-and-drop on project image upload zone ── */
+  const projImgZone = document.getElementById('proj-img-upload-zone');
+  if (projImgZone) {
+    projImgZone.addEventListener('dragover', e => { e.preventDefault(); projImgZone.classList.add('dragover'); });
+    projImgZone.addEventListener('dragleave', () => projImgZone.classList.remove('dragover'));
+    projImgZone.addEventListener('drop', e => {
+      e.preventDefault(); projImgZone.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files && files.length) handleProjectImageUpload({ target: { files, value: '' } });
+    });
+    projImgZone.addEventListener('mouseover', () => {
+      const overlay = document.getElementById('proj-img-overlay');
+      if (overlay) overlay.style.opacity = '1';
+    });
+    projImgZone.addEventListener('mouseout', () => {
+      const overlay = document.getElementById('proj-img-overlay');
+      if (overlay) overlay.style.opacity = '0';
+    });
+  }
+
+  ['project-modal','skill-modal','confirm-modal'].forEach(id => {
+    document.getElementById(id).addEventListener('click', e => {
+      if (e.target.id === id) {
+        if (id === 'project-modal') closeProjectModal();
+        else if (id === 'skill-modal') closeSkillModal();
+        else closeConfirmModal();
+      }
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeProjectModal(); closeSkillModal(); closeConfirmModal(); }
+  });
+
+  /* ══════════════════════════════════════════════════
+     PHOTO DROP ZONE HOVER
+  ══════════════════════════════════════════════════ */
+  const photoDropZone = document.getElementById('photo-drop-zone');
+  const photoHoverOverlay = document.getElementById('photo-hover-overlay');
+  if (photoDropZone && photoHoverOverlay) {
+    photoDropZone.addEventListener('mouseover', () => { photoHoverOverlay.style.opacity = '1'; });
+    photoDropZone.addEventListener('mouseout', () => { photoHoverOverlay.style.opacity = '0'; });
+  }
+
+  function photoDrop(e) {
+    e.preventDefault();
+    const zone = document.getElementById('photo-drop-zone');
+    if (zone) { zone.style.borderColor = ''; zone.style.background = ''; }
+    const files = e.dataTransfer.files;
+    if (files && files.length) handlePhotoUpload({ target: { files } });
+  }
+
+  /* ══════════════════════════════════════════════════
+     MEDIA UPLOAD ZONE DRAG & DROP
+  ══════════════════════════════════════════════════ */
+  document.querySelectorAll('.upload-zone').forEach(zone => {
+    if (zone.id === 'photo-drop-zone') return; // handled separately
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault(); zone.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length) handleMediaUpload({ target: { files, value: '' } });
+    });
+  });
+
+  /* ══════════════════════════════════════════════════
+     PARALLAX HERO
+  ══════════════════════════════════════════════════ */
+  document.addEventListener('mousemove', e => {
+    const hero = document.getElementById('hero'); if (!hero) return;
+    if (e.clientY < hero.getBoundingClientRect().bottom) {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20, y = (e.clientY / window.innerHeight - 0.5) * 20;
+      document.querySelectorAll('.float-icon').forEach((el, i) => {
+        el.style.transform = `translate(${x*(i+1)*0.1}px,${y*(i+1)*0.1}px)`;
+      });
+    }
+  });
+
+  /* ══════════════════════════════════════════════════
+     AUTH STATE LISTENER + INIT
+  ══════════════════════════════════════════════════ */
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Apply saved language on init
+    const savedLang = localStorage.getItem('portfolio_lang') || 'en';
+    if (savedLang !== 'en') {
+      setLanguage(savedLang);
+    } else {
+      translatePage();
+    }
+
+    // Load public data immediately
+    await loadPublicData();
+    observeAnimated();
+
+    // Check auth session
+    const { data: { session } } = await sb.auth.getSession();
+
+    // Handle OAuth error in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('error') === 'access_denied') {
+      setLoginError('Login was cancelled.');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // Auth state changes
+    sb.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' && session?.user) {
+        // If admin panel is showing, display dashboard
+        if (document.getElementById('admin-section').classList.contains('active')) {
+          showDashboard(session.user);
+        }
+      } else if (event === 'SIGNED_OUT') {
+        // Already handled in logout function
+      }
+    });
+
+    // If admin hash in URL and logged in, show dashboard
+    if (window.location.hash === '#admin') {
+      showAdmin(null);
+      if (session?.user) showDashboard(session.user);
+    }
+
+    // Hide page loader
+    const loader = document.getElementById('pageLoader');
+    if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 500); }
+  });
+  /* ══════════════════════════════════════════════════
+     I18N SYSTEM — BILINGUAL EN / KH
+  ══════════════════════════════════════════════════ */
+  const i18n = {
+    en: {
+      'nav.home':'Home','nav.about':'About','nav.skills':'Skills','nav.experience':'Experience',
+      'nav.projects':'Projects','nav.contact':'Contact','nav.admin':'ADMIN',
+      'hero.badge':'> CYBERSECURITY_PORTFOLIO.EXE',
+      'hero.desc':'Passionate about network security and ethical hacking. Specializing in FortiGate & MikroTik configurations, penetration testing, and building robust security architectures.',
+      'hero.btn.projects':'View Projects','hero.btn.contact':'Contact Me',
+      'about.tag':'ABOUT.ME','about.title':'Who I Am','about.status':'Available for hire',
+      'about.stat.projects':'PROJECTS','about.stat.tech':'TECHNOLOGIES','about.stat.labs':'SECURITY LABS',
+      'skills.tag':'CAPABILITIES','skills.title':'Technical Skills',
+      'skills.filter.all':'All','skills.filter.cyber':'Cybersecurity','skills.filter.network':'Networking',
+      'skills.filter.web':'Web Dev','skills.filter.sysadmin':'SysAdmin',
+      'exp.tag':'JOURNEY','exp.title':'Experience & Timeline',
+      'projects.tag':'PORTFOLIO','projects.title':'Featured Projects',
+      'projects.filter.all':'All','projects.filter.security':'Security',
+      'projects.filter.web':'Web','projects.filter.network':'Networking',
+      'contact.tag':'CONNECT','contact.title':'Get In Touch',
+      'contact.subtitle':"Whether you have a question, project idea, or just want to say hello — my inbox is always open.",
+      'contact.form.title':'Send a Message','contact.form.name':'Name','contact.form.email':'Email',
+      'contact.form.message':'Message','contact.form.name.ph':'Your name',
+      'contact.form.msg.ph':'Your message...','contact.form.btn':'SEND MESSAGE',
+      'footer.tagline':'Cybersecurity enthusiast and network security learner. Building secure digital futures one packet at a time.',
+      'footer.nav':'NAVIGATION','footer.expertise':'EXPERTISE',
+      'admin.title':'Admin Access','admin.subtitle':'SECURE_LOGIN // SUPABASE AUTH',
+      'admin.email':'Email','admin.password':'Password','admin.login.btn':'ACCESS DASHBOARD',
+      'admin.forgot':'Forgot password?',
+      'admin.nav.overview':'Overview','admin.nav.profile':'Profile','admin.nav.projects':'Projects',
+      'admin.nav.skills':'Skills','admin.nav.media':'Media','admin.nav.cv':'CV / Resume','admin.nav.viewsite':'View Site','admin.nav.logout':'Logout',
+      'hero.btn.view.cv':'View CV','hero.btn.download.cv':'Download CV',
+      'toast.msg.sent':"Message sent! I'll get back to you soon.",'toast.msg.failed':'Failed to send: ',
+      'toast.profile.saved':'Profile saved successfully!','toast.photo.updated':'Profile photo updated!',
+      'toast.photo.large':'File too large. Max 5MB.',
+      'toast.proj.added':'Project added!','toast.proj.updated':'Project updated!','toast.proj.deleted':'Project deleted.',
+      'toast.skill.added':'Skill added!','toast.skill.updated':'Skill updated!','toast.skill.deleted':'Skill deleted.',
+      'toast.media.deleted':'Media file deleted.','toast.url.copied':'URL copied to clipboard!',
+      'toast.logged.out':'Logged out successfully.'
+    },
+    km: {
+      'nav.home':'ទំព័រដើម','nav.about':'អំពីខ្ញុំ','nav.skills':'ជំនាញ','nav.experience':'បទពិសោធន៍',
+      'nav.projects':'គម្រោង','nav.contact':'ទំនាក់ទំនង','nav.admin':'គ្រប់គ្រង',
+      'hero.badge':'> ផលប័ត្រសន្តិសុខ.EXE',
+      'hero.desc':'ចូលចិត្តសន្តិសុខបណ្តាញ និងការ hack ប្រកបដោយក្រមសីលធម៌។ ជំនាញលើ FortiGate, MikroTik, ការ testing ចូលប្រើ និងការសាង​សង់ architecture សន្តិសុខ​ដ៏រឹង​មាំ។',
+      'hero.btn.projects':'មើលគម្រោង','hero.btn.contact':'ទំនាក់ទំនង',
+      'about.tag':'អំពីខ្ញុំ','about.title':'ខ្ញុំជានរណា','about.status':'ទទួលការងារ',
+      'about.stat.projects':'គម្រោង','about.stat.tech':'បច្ចេកវិទ្យា','about.stat.labs':'មន្ទីរពិសោធន៍',
+      'skills.tag':'សមត្ថភាព','skills.title':'ជំនាញបច្ចេកទេស',
+      'skills.filter.all':'ទាំងអស់','skills.filter.cyber':'សន្តិសុខ','skills.filter.network':'បណ្តាញ',
+      'skills.filter.web':'Web','skills.filter.sysadmin':'SysAdmin',
+      'exp.tag':'ដំណើរ','exp.title':'បទពិសោធន៍ & ប្រវត្តិ',
+      'projects.tag':'ផលប័ត្រ','projects.title':'គម្រោងពិសេស',
+      'projects.filter.all':'ទាំងអស់','projects.filter.security':'សន្តិសុខ',
+      'projects.filter.web':'Web','projects.filter.network':'បណ្តាញ',
+      'contact.tag':'ភ្ជាប់','contact.title':'ទំនាក់ទំនង',
+      'contact.subtitle':'មិនថា​ អ្នក​មាន​សំណួរ, គំនិត​គម្រោង, ឬ​គ្រាន់​តែ​ចង់​ស្វាគមន៍ — ខ្ញុំ​តែងតែ​ចង់​ឮ​ពីអ្នក',
+      'contact.form.title':'ផ្ញើ​សារ','contact.form.name':'ឈ្មោះ','contact.form.email':'អ៊ីមែល',
+      'contact.form.message':'សារ','contact.form.name.ph':'ឈ្មោះ​របស់​អ្នក',
+      'contact.form.msg.ph':'សារ​របស់​អ្នក...','contact.form.btn':'ផ្ញើ​សារ',
+      'footer.tagline':'អ្នក​ចូល​ចិត្ត​សន្តិសុខ cyber និង​ការ​រៀន​សន្តិសុខ​បណ្តាញ។ ការ​សាង​សង់​អនាគត​ digital ប្រកប​ដោយ​សុវត្ថិភាព​ម្ដង​មួយ​ packet។',
+      'footer.nav':'រុករក','footer.expertise':'ជំនាញ',
+      'admin.title':'ចូល​ Admin','admin.subtitle':'ចូល​ប្រើ​ប្រាស់​ប្រកប​ដោយ​សុវត្ថិភាព',
+      'admin.email':'អ៊ីមែល','admin.password':'ពាក្យ​សម្ងាត់','admin.login.btn':'ចូល Dashboard',
+      'admin.forgot':'ភ្លេច​ពាក្យ​សម្ងាត់?',
+      'admin.nav.overview':'ទិដ្ឋភាព','admin.nav.profile':'ប្រវត្តិ','admin.nav.projects':'គម្រោង',
+      'admin.nav.skills':'ជំនាញ','admin.nav.media':'មេឌៀ','admin.nav.cv':'CV / Resume','admin.nav.viewsite':'មើល​គេហទំព័រ','admin.nav.logout':'ចេញ',
+      'hero.btn.view.cv':'មើល CV','hero.btn.download.cv':'ទាញ CV',
+      'toast.msg.sent':'សារ​បាន​ផ្ញើ! ខ្ញុំ​នឹង​ឆ្លើយ​ក្នុង​ពេល​ឆាប់ៗ','toast.msg.failed':'បរាជ័យ​ក្នុង​ការ​ផ្ញើ: ',
+      'toast.profile.saved':'Profile ​បាន​រក្សា​ទុក!','toast.photo.updated':'រូបថត Profile បាន​ធ្វើ​បច្ចុប្បន្ន​ភាព!',
+      'toast.photo.large':'ឯកសារ​ធំ​ពេក។ អតិបរមា 5MB.',
+      'toast.proj.added':'គម្រោង​បាន​បន្ថែម!','toast.proj.updated':'គម្រោង​បាន​ធ្វើ​បច្ចុប្បន្ន​ភាព!','toast.proj.deleted':'គម្រោង​ត្រូវ​បាន​លុប។',
+      'toast.skill.added':'ជំនាញ​បាន​បន្ថែម!','toast.skill.updated':'ជំនាញ​បាន​ធ្វើ​បច្ចុប្បន្ន​ភាព!','toast.skill.deleted':'ជំនាញ​ត្រូវ​បាន​លុប។',
+      'toast.media.deleted':'ឯកសារ​មេឌៀ​ត្រូវ​បាន​លុប។','toast.url.copied':'URL ​ត្រូវ​បាន​ចម្លង!',
+      'toast.logged.out':'ចេញ​ដោយ​ជោគជ័យ។'
+    }
+  };
+
+  let currentLang = localStorage.getItem('portfolio_lang') || 'en';
+
+  function t(key) {
+    return (i18n[currentLang] && i18n[currentLang][key]) || (i18n['en'][key]) || key;
+  }
+
+  function translatePage() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t(key);
+      if (val) el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      const val = t(key);
+      if (val) el.placeholder = val;
+    });
+    // Dynamic title
+    document.title = currentLang === 'km'
+      ? 'Horn Oudom | ផលប័ត្រ​សន្តិសុខ'
+      : 'Horn Oudom | Cybersecurity Portfolio';
+    // hreflang canonical update
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.content = currentLang === 'km'
+      ? 'Horn Oudom – អ្នក​ចូល​ចិត្ត​សន្តិសុខ​ cyber, FortiGate, MikroTik'
+      : 'Horn Oudom – Cybersecurity Enthusiast, Network Security Learner';
+  }
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('portfolio_lang', lang);
+    // Update body class
+    document.body.classList.toggle('lang-km', lang === 'km');
+    document.body.classList.toggle('lang-en', lang === 'en');
+    // Update html lang attr
+    document.documentElement.lang = lang === 'km' ? 'km' : 'en';
+    // Update switcher buttons
+    document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-lang-km').classList.toggle('active', lang === 'km');
+    // Translate all static elements
+    translatePage();
+    // Re-render dynamic sections with new language context
+    renderSkills();
+    renderProjects();
+    renderTimeline();
+  }
+
+  // Override showToast to use i18n keys when possible
+  const _origShowToast = showToast;
+  function showToastI18n(key, type, suffix) {
+    const msg = t(key) + (suffix || '');
+    _origShowToast(msg, type);
+  }
+
+  // Apply language on page load (after DOM ready)
+  document.addEventListener('DOMContentLoaded', () => {
+    // Apply saved language
+    setTimeout(() => {
+      setLanguage(currentLang);
+    }, 100);
+  }, { once: false, capture: false });
+
+  /* ══════════════════════════════════════════════════
+     CV / RESUME MANAGEMENT
+  ══════════════════════════════════════════════════ */
+  function renderAdminCvSection(cvUrl) {
+    const noFile = document.getElementById('cv-no-file');
+    const fileInfo = document.getElementById('cv-file-info');
+    const urlDisplay = document.getElementById('cv-url-display');
+    const viewLink = document.getElementById('cv-view-link');
+    const dlLink = document.getElementById('cv-download-link');
+    if (!noFile || !fileInfo) return;
+    if (cvUrl) {
+      noFile.classList.add('hidden');
+      fileInfo.classList.remove('hidden');
+      if (urlDisplay) urlDisplay.textContent = cvUrl.split('/').pop() || cvUrl;
+      if (viewLink) viewLink.href = cvUrl;
+      if (dlLink) dlLink.href = cvUrl;
+    } else {
+      noFile.classList.remove('hidden');
+      fileInfo.classList.add('hidden');
+    }
+  }
+
+  async function handleCvUpload(e) {
+    const files = e.target ? e.target.files : e;
+    const file = files[0]; if (!file) return;
+    if (file.size > 10 * 1024 * 1024) { showToast('File too large. Max 10MB.', 'error'); return; }
+
+    // Reset input value early so the same file can be re-selected if needed
+    try { if (e.target && e.target.value !== undefined) e.target.value = ''; } catch(ex) {}
+
+    const progress = document.getElementById('cv-upload-progress');
+    const dropZone = document.getElementById('cv-drop-zone');
+    const chooseBtn = document.querySelector('#page-cv .btn-primary');
+    if (progress) progress.classList.remove('hidden');
+    if (dropZone) dropZone.style.display = 'none';
+    if (chooseBtn) chooseBtn.disabled = true;
+
+    try {
+      const ext = file.name.split('.').pop().toLowerCase();
+      const fileName = `cv-hornoudom-${Date.now()}.${ext}`;
+
+      // Step 1: Upload file to storage
+      const { data: uploadData, error: upErr } = await sb.storage
+        .from('media-library')
+        .upload(fileName, file, { upsert: true, cacheControl: '3600' });
+
+      if (upErr) {
+        let errMsg = upErr.message || 'Storage upload failed.';
+        // Try to get more detail
+        if (upErr.statusCode) errMsg += ' (code ' + upErr.statusCode + ')';
+        throw new Error(errMsg);
+      }
+
+      // Step 2: Get public URL
+      const { data: urlData } = sb.storage.from('media-library').getPublicUrl(fileName);
+      const publicUrl = urlData.publicUrl;
+
+      // Step 3: Re-fetch latest profile to make sure we have the current id
+      const { data: freshProfile, error: profFetchErr } = await sb.from('profiles').select('id').limit(1).single();
+
+      let saveRes;
+      if (freshProfile?.id) {
+        saveRes = await sb.from('profiles')
+          .update({ cv_url: publicUrl, updated_at: new Date().toISOString() })
+          .eq('id', freshProfile.id);
+      } else {
+        // No profile row yet — insert one
+        saveRes = await sb.from('profiles').insert({ cv_url: publicUrl });
+      }
+
+      if (saveRes.error) throw new Error('Could not save CV link: ' + saveRes.error.message);
+
+      // Update in-memory profile
+      if (!appData.profile) appData.profile = {};
+      appData.profile.cv_url = publicUrl;
+      if (freshProfile?.id) appData.profile.id = freshProfile.id;
+
+      renderAdminCvSection(publicUrl);
+
+      // Show public hero buttons
+      const viewBtn = document.getElementById('hero-view-cv-btn');
+      const dlBtn   = document.getElementById('hero-download-cv-btn');
+      if (viewBtn) { viewBtn.href = publicUrl; viewBtn.classList.remove('hidden'); }
+      if (dlBtn)   { dlBtn.href   = publicUrl; dlBtn.classList.remove('hidden'); }
+
+      showToast('CV uploaded successfully!', 'success');
+    } catch (err) {
+      console.error('CV upload error:', err);
+      showToast('Upload failed: ' + (err.message || 'Unknown error'), 'error');
+    } finally {
+      if (progress) progress.classList.add('hidden');
+      if (dropZone) dropZone.style.display = '';
+      if (chooseBtn) chooseBtn.disabled = false;
+    }
+  }
+
+  function cvDrop(e) {
+    e.preventDefault();
+    const zone = document.getElementById('cv-drop-zone');
+    if (zone) zone.classList.remove('dragover');
+    const files = e.dataTransfer.files;
+    if (files && files.length) handleCvUpload({ target: { files } });
+  }
+
+  async function removeCv() {
+    if (!appData.profile?.cv_url) return;
+    const currentProfile = appData.profile;
+    const res = await sb.from('profiles').update({ cv_url: null, updated_at: new Date().toISOString() }).eq('id', currentProfile.id);
+    if (res.error) { showToast('Error: ' + res.error.message, 'error'); return; }
+    if (appData.profile) appData.profile.cv_url = null;
+    renderAdminCvSection(null);
+    const viewBtn = document.getElementById('hero-view-cv-btn');
+    const dlBtn = document.getElementById('hero-download-cv-btn');
+    if (viewBtn) viewBtn.classList.add('hidden');
+    if (dlBtn) dlBtn.classList.add('hidden');
+    showToast('CV removed.', 'info');
+  }
+
+  // Re-run translate after initial data load
+  const _origLoadPublicData = loadPublicData;
+  async function loadPublicDataWithTranslate() {
+    await _origLoadPublicData.call(this);
+    translatePage();
+  }
+
+  /* ══════════════════════════════════════════════════
+     DARK / LIGHT MODE TOGGLE
+  ══════════════════════════════════════════════════ */
+  let currentTheme = localStorage.getItem('portfolio_theme') || 'dark';
+
+  // Apply theme immediately on script parse to prevent flash
+  (function() {
+    if (localStorage.getItem('portfolio_theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  })();
+
+  function applyTheme(theme) {
+    currentTheme = theme;
+    const isLight = theme === 'light';
+    document.body.classList.toggle('light-mode', isLight);
+    const icon = document.getElementById('theme-icon');
+    if (icon) icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) {
+      btn.title = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+      btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    }
+    const loader = document.getElementById('pageLoader');
+    if (loader) loader.style.background = isLight ? '#f0f4f8' : '#030712';
+    localStorage.setItem('portfolio_theme', theme);
+  }
+
+  function toggleTheme() {
+    applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  }
+
+  // Sync theme icon after DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('portfolio_theme') || 'dark');
+  }, { once: true });
+  </script>
+  <script>
+    window.onload = function() {
+      var d = document.createElement('div');
+      d.id = 'appLoadFinished';
+      document.body.appendChild(d);
+    };
+  </script>
+
+<script>window.onload=function(){var d=document.createElement("div");d.id="appLoadFinished";document.body.appendChild(d);};</script>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
